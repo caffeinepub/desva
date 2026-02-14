@@ -11,8 +11,10 @@ export default function TopNav() {
     { label: 'Home', path: '/' },
     { label: 'Bouquets', path: '/bouquets' },
     { label: 'Polaroids', path: '/polaroids' },
+    { label: 'Frames & Keepsakes', path: '/frames-keepsakes' },
     { label: 'Bookmarks', path: '/bookmarks' },
     { label: 'Customized Cards', path: '/customized-cards' },
+    { label: 'Cute Essentials', path: '/cute-essentials' },
     { label: 'Custom Orders', path: '/custom-orders' },
   ];
 
@@ -31,7 +33,7 @@ export default function TopNav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
+          <div className="hidden lg:flex lg:items-center lg:space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -50,7 +52,7 @@ export default function TopNav() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -59,7 +61,7 @@ export default function TopNav() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-1 border-t border-border/40">
+          <div className="lg:hidden py-4 space-y-1 border-t border-border/40">
             {navLinks.map((link) => (
               <Link
                 key={link.path}

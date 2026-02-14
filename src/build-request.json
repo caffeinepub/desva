@@ -1,242 +1,128 @@
 {
   "kind": "build_request",
-  "title": "Build DESVA boutique-style website with collections pages and custom order form",
+  "title": "Bouquet Collection: 6-card luxury grid with updated pricing, descriptions, and premium soft-white images",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Create a site-wide layout with a top navigation and a simple footer, and add routes for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, and Custom Orders.",
+      "text": "Update the Bouquet Collection page to present a single main section titled “Bouquet Collection” containing exactly 6 product cards in a clean, premium grid layout (6 items total), each showing: product image, product name, short description, and pricing details, matching the user-provided bouquet types and copy.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "1️⃣ HOME PAGE ... 💐 BOUQUET COLLECTION PAGE ... 📸 POLAROID COLLECTION PAGE ... 📚 BOOKMARK COLLECTION ... 💌 CUSTOMIZED CARD COLLECTION ... ✨ CUSTOM ORDERS PAGE"
+          "Create a separate main section titled “Bouquet Collection”.\n\nInside this Bouquet section, create 6 clear product divisions (6 columns or 6 product cards).\n\nEach division must display:\n\t•\tProduct Image (use assigned uploaded image)\n\t•\tProduct Name\n\t•\tShort Description\n\t•\tPricing Details\n\t•\tClean premium layout"
         ]
       },
       "acceptanceCriteria": [
-        "Navigation links to all pages: Home, Bouquets, Polaroids, Bookmarks, Customized Cards, Custom Orders.",
-        "Footer appears on all pages and contains an Instagram link, a contact email text, and the line “Made with Love by DESVA”.",
-        "All routes render without blank screens and have consistent spacing/typography."
+        "/bouquets renders one Bouquet Collection section containing 6 product cards for: Ribbon Flower Bouquet, Artificial Flower Bouquet, Natural Flower Bouquet, Pipe Cleaner Flower Bouquet, Polaroid Bouquet, Customized Bouquet.",
+        "Each card displays: image, name, short description, and pricing details (tiers or starting price as specified).",
+        "Text and pricing match the user prompt exactly (including the Pipe Cleaner note text)."
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Implement the Home page sections: (1) Hero with large brand name “DESVA”, the uploaded logo image, tagline “personalized With Love”, soft pastel pink background, and two CTAs “Shop Now” and “Explore Collections”; (2) Short Intro section with the provided DESVA description; (3) Featured Categories preview cards for Bouquets, Polaroids, Bookmarks, Customized Cards; (4) “Why Choose DESVA” section with the 4 bullet points; include smooth scrolling for in-page sections where applicable.",
+      "text": "Ensure bouquet card content matches the provided descriptions and pricing exactly:\n- Ribbon Flower Bouquet: Description “Handmade ribbon flower bouquet with elegant wrapping.” Pricing tiers: Normal ₹89, Premium ₹119\n- Artificial Flower Bouquet: Description “Long-lasting artificial flower bouquet with premium finish.” Pricing tiers: Normal ₹89, Premium ₹119\n- Natural Flower Bouquet: Description “Fresh natural flower bouquet arranged beautifully.” Pricing tiers: Normal ₹89, Premium ₹119\n- Pipe Cleaner Flower Bouquet: Pricing tiers: Normal ₹200, Premium ₹250, Customized Premium ₹300+ and include note: “Final price depends on customization.”\n- Polaroid Bouquet: Description “Creative bouquet designed using polaroid photo memories.” Pricing: Starting from ₹350\n- Customized Bouquet: Description “Fully customized bouquet designed according to theme and customer preferences.” Pricing: Starting from ₹550",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "Hero Section: • Large brand name DESVA and the logo is the image uploaded • Tagline: “personalized With Love” • Soft pastel pink background • Button: Shop Now • Button: Explore Collections",
-          "Short Intro Section: DESVA creates affordable yet premium handmade bouquets, bookmarks, polaroids, and customized gifts for special occasions.",
-          "Featured Categories Preview: • Bouquets • Polaroids • Bookmarks • Customized Cards",
-          "Why Choose DESVA: • Handmade with care • Affordable pricing • Customizable options • Trend-based designs",
-          "Smooth scrolling sections"
+          "🌸 1️⃣ Ribbon Flower Bouquet\n\nPricing:\n\t•\tNormal – ₹89\n\t•\tPremium – ₹119\n\nDescription:\nHandmade ribbon flower bouquet with elegant wrapping.\n\n⸻\n\n🌸 2️⃣ Artificial Flower Bouquet\n...\n🌸 6️⃣ Customized Bouquet\n...\nPricing:\n\t•\tStarting from ₹550\n\nDescription:\nFully customized bouquet designed according to theme and customer preferences."
         ]
       },
       "acceptanceCriteria": [
-        "Hero displays brand name “DESVA”, tagline exactly “personalized With Love”, and the uploaded logo image.",
-        "“Shop Now” and “Explore Collections” buttons are visible and navigate users to relevant sections/pages (no dead buttons).",
-        "Featured categories are displayed in an Instagram-style grid and each item links to its respective collection page.",
-        "“Why Choose DESVA” renders the four bullets exactly as provided."
+        "Prices displayed on the Bouquet Collection page match the prompt exactly (including ₹200/₹250/₹300+ for Pipe Cleaner, and Starting from ₹350/₹550 for Polaroid/Customized).",
+        "The Pipe Cleaner card includes the note text exactly: “Final price depends on customization.”",
+        "Each bouquet card includes its specific short description (not generic placeholder text like “Choose your preferred tier”)."
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Create the Bouquet Collection page showing 4 bouquet types with the exact pricing tiers provided, and include the note: “Customized pricing may vary based on design complexity.” Also include the Pipe Cleaner Flower Bouquet pricing split into: Normal – ₹200, Medium / Premium – ₹250, Customized Premium – Starting ₹300+.",
+      "text": "Implement the Bouquet Collection grid as a responsive, equal-spacing layout with a luxury boutique feel on a soft white / beige aesthetic background. The grid must be mobile responsive and use elegant typography consistent with a premium catalog.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "💐 BOUQUET COLLECTION PAGE\n\nWe offer 4 types of bouquets:\n\n1. Natural Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n2. Artificial Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n3. Ribbon Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n4. Pipe Cleaner Flower Bouquet\n\nDivide into 3 categories:\n\t•\tNormal – ₹200\n\t•\tMedium / Premium – ₹250\n\t•\tCustomized Premium – Starting ₹300+\n\nAdd note:\n“Customized pricing may vary based on design complexity.”"
+          "Use a soft white aesthetic background and maintain a luxury boutique style.\n...\nLayout must be:\n\t•\tClean grid format\n\t•\tEqual spacing\n\t•\tElegant typography\n\t•\tMobile responsive\n\t•\tLuxury handmade boutique feel"
         ]
       },
       "acceptanceCriteria": [
-        "All bouquet types and all listed tiers/prices render exactly with the ₹ symbol and values.",
-        "The customized pricing note appears on the page exactly as provided.",
-        "Layout uses a clean, mobile-friendly grid/list that matches the site design system."
+        "Bouquet Collection section background is soft white/beige (not a colorful gradient).",
+        "Grid is responsive (1 column on small screens; increases with breakpoints) and maintains equal spacing between cards.",
+        "Card styling reads as premium (clean borders/shadows, consistent spacing/typography)."
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Create the Polaroid Collection page with the three sizes and prices: Square – ₹9, Rectangle – ₹9, Large – ₹11, and display the provided short description.",
+      "text": "Add the 6 uploaded bouquet images as static frontend assets and update frontend image mappings so the Bouquet Collection cards use the assigned images in order (1st–6th) with the provided filenames: IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "📸 POLAROID COLLECTION PAGE\n\nThree sizes available:\n\t•\tSquare – ₹9\n\t•\tRectangle – ₹9\n\t•\tLarge – ₹11\n\nShort description:\nHigh-quality printed polaroid-style photo keepsakes. Perfect for memories, events, and gifts."
+          "The user has uploaded 6 image(s): IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg."
         ]
       },
       "acceptanceCriteria": [
-        "All three size options and prices render exactly as specified.",
-        "Description renders exactly as provided."
+        "The bouquet cards render images sourced from the new uploaded asset set (not older IMG_6957-1/IMG_6952-1/etc).",
+        "Image-to-product assignment matches the prompt order: (1) Ribbon, (2) Artificial, (3) Natural, (4) Pipe Cleaner, (5) Polaroid Bouquet, (6) Customized Bouquet.",
+        "No broken image links appear on /bouquets."
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Create the Bookmark Collection page showing Starting Price – ₹49 and the provided description.",
+      "text": "Generate and use premium-edited versions of all 6 bouquet images that preserve original product colors/design while replacing the background with soft white or beige, adding a subtle shadow, maintaining high resolution, and centering the product. Store generated images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "📚 BOOKMARK COLLECTION\n\nStarting Price – ₹49\n\nDescription:\nAesthetic and personalized bookmarks perfect for students, farewell gifts, and return gifts."
+          "For all bouquet images:\n\t•\tKeep original product colors\n\t•\tDo not alter product design\n\t•\tReplace background with soft white or beige aesthetic\n\t•\tAdd subtle shadow\n\t•\tMaintain high resolution\n\t•\tUse clean centered alignment\n\t•\tMake product look premium and professional"
         ]
       },
       "acceptanceCriteria": [
-        "Starting price renders exactly “Starting Price – ₹49”.",
-        "Description renders exactly as provided."
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Create the Customized Card Collection page showing Price – ₹250 and the provided description.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "💌 CUSTOMIZED CARD COLLECTION\n\nPrice – ₹250\n\nDescription:\nFully customized event cards for farewell, bridal, birthdays, and special occasions."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Price renders exactly “Price – ₹250”.",
-        "Description renders exactly as provided."
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Create the Custom Orders page with a form containing these fields: Name, Product Type, Event Type, Quantity, Custom Message, Date Required; include the line “DM us on Instagram for quick custom orders.”",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "✨ CUSTOM ORDERS PAGE\n\nInclude a form:\n\t•\tName\n\t•\tProduct Type\n\t•\tEvent Type\n\t•\tQuantity\n\t•\tCustom Message\n\t•\tDate Required\n\nAdd:\n“DM us on Instagram for quick custom orders.”"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All listed fields are present with appropriate input types (Quantity numeric, Date Required date input).",
-        "Submitting the form shows a clear success state and does not lose entered data unexpectedly.",
-        "The Instagram DM line is visible exactly as provided."
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Add backend support to persist custom order submissions (store form entries with a timestamp), and expose methods to create a submission and to fetch submissions for basic verification/testing.",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "✨ CUSTOM ORDERS PAGE\n\nInclude a form: ..."
-        ]
-      },
-      "acceptanceCriteria": [
-        "A backend method exists to create/store a custom order submission including all form fields plus a timestamp.",
-        "A backend query method exists to fetch stored submissions (for testing/verification).",
-        "Frontend form submission calls the backend and handles success/error responses gracefully."
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "text": "Apply the requested site-wide design style: soft pastel palette (blush pink, beige, cream, light blue), white clean backgrounds, rounded buttons, minimal icons, elegant typography, Instagram-style product grids, mobile-friendly layout, and smooth transitions/animations; ensure the overall look is premium, minimal, soft feminine, not cluttered, and luxury-but-affordable.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "🖼 DESIGN STYLE INSTRUCTIONS\n\t•\tSoft pastel palette (blush pink, beige, cream, light blue)\n\t•\tWhite clean background\n\t•\tRounded buttons\n\t•\tMinimal icons\n\t•\tElegant typography\n\t•\tInstagram-style product grid\n\t•\tMobile-friendly layout\n\t•\tSmooth scrolling sections",
-          "IMPORTANT STYLE INSTRUCTION\n\nThe website should feel:\nPremium\nMinimal\nSoft feminine\nNot cluttered\nLuxury but affordable\n\nThe website should feel like a premium international handmade brand similar to a luxury boutique. Clean spacing, elegant typography, smooth animations, and Instagram-friendly layout."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Buttons across the site have rounded styling and consistent hover/focus states.",
-        "Pages use consistent typography and spacing with a soft pastel/cream/white aesthetic (no harsh or cluttered layouts).",
-        "Grids resemble an Instagram-style product grid on desktop and collapse cleanly on mobile.",
-        "Subtle animations/transitions are present (e.g., section fade/slide-in, hover lift on cards) without feeling busy."
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "text": "Integrate the uploaded logo image (IMG_5343.jpeg) as a static frontend asset and use it in the Home hero and (optionally) in the navigation bar brand area.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Large brand name DESVA and the logo is the image uploaded"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Logo renders crisply without stretching and maintains aspect ratio.",
-        "Logo is bundled as a static asset served by the frontend (not fetched from the backend)."
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Create a coherent visual theme system (colors, type scale, spacing, radii) aligned to the provided pastel/luxury-boutique direction and enforce it consistently across all pages and components.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Soft pastel palette (blush pink, beige, cream, light blue)",
-          "Premium international handmade brand ... Clean spacing, elegant typography"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A consistent set of design tokens/styles is used site-wide (not ad-hoc styles per page).",
-        "No pages deviate into a different look-and-feel; all sections appear part of the same brand system."
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Add generated icon assets (favicon + app icons) that visually match the uploaded logo style, and serve them as static assets from the frontend.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Large brand name DESVA and the logo is the image uploaded"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Favicon and app icons exist in the frontend public assets and are referenced by the app so the browser tab icon is set.",
-        "Generated assets are stored under frontend/public/assets/generated and are not routed through the backend."
+        "There are 6 generated bouquet images in frontend/public/assets/generated and the Bouquet Collection uses them (not the raw uploads).",
+        "Generated images visibly have a soft white/beige background and subtle shadow, and the bouquet is centered without altering product colors/design.",
+        "Generated images are high resolution and consistently sized for a uniform grid presentation."
       ]
     }
   ],
   "constraints": [
-    "Frontend must use React + TypeScript with Tailwind and existing UI components by composition only (do not edit read-only UI component sources).",
-    "Backend must remain a single Motoko actor (no additional backend services).",
-    "Use English for all user-facing text."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui (compose only).",
+    "Keep original product colors and do not alter product design in bouquet images; only adjust background and add subtle shadow.",
+    "Store generated images as static assets under frontend/public/assets/generated; do not route image generation/serving through the backend."
   ],
   "nonGoals": [
-    "E-commerce checkout, payments, or inventory management.",
-    "User accounts/authentication or admin dashboards for managing orders.",
-    "Third-party integrations beyond a simple outbound Instagram link."
+    "Do not add checkout, payments, cart, or ordering flows beyond existing site behavior.",
+    "Do not change backend canister logic (Motoko) for this request.",
+    "Do not redesign other collection pages (Polaroid/Bookmarks/etc) except for shared image mapping changes needed to support the Bouquet Collection images."
   ],
   "imageRequirements": {
     "required": [
-      "Favicon icon derived from the uploaded logo style (desva-favicon.dim_64x64.png)",
-      "App icon derived from the uploaded logo style (desva-appicon.dim_180x180.png)"
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6954_softwhite.dim_1600x1600.png)",
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6959_softwhite.dim_1600x1600.png)",
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6960-5_softwhite.dim_1600x1600.png)",
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6958-5_softwhite.dim_1600x1600.png)",
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6967-5_softwhite.dim_1600x1600.png)",
+      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6966-5_softwhite.dim_1600x1600.png)"
     ],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

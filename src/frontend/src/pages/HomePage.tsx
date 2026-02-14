@@ -2,7 +2,8 @@ import { useNavigate } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Section, SectionHeader } from '@/components/Section';
-import { Flower2, Image, Bookmark, Mail, Heart, Sparkles, DollarSign, Palette } from 'lucide-react';
+import { Flower2, Image, Bookmark, Mail, Heart, Sparkles, DollarSign, Palette, Frame, Sparkle } from 'lucide-react';
+import { SiInstagram } from 'react-icons/si';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -23,6 +24,13 @@ export default function HomePage() {
       color: 'text-blue-400',
     },
     {
+      title: 'Frames & Keepsakes',
+      description: 'Memory albums & prints',
+      icon: Frame,
+      path: '/frames-keepsakes',
+      color: 'text-teal-400',
+    },
+    {
       title: 'Bookmarks',
       description: 'Aesthetic personalized bookmarks',
       icon: Bookmark,
@@ -36,6 +44,13 @@ export default function HomePage() {
       path: '/customized-cards',
       color: 'text-purple-400',
     },
+    {
+      title: 'Cute Essentials',
+      description: 'Handcrafted accessories',
+      icon: Sparkle,
+      path: '/cute-essentials',
+      color: 'text-pink-400',
+    },
   ];
 
   const whyChoose = [
@@ -46,12 +61,12 @@ export default function HomePage() {
     },
     {
       icon: DollarSign,
-      title: 'Affordable pricing',
-      description: 'Premium quality at accessible prices',
+      title: 'Premium look at affordable pricing',
+      description: 'Luxury quality without the luxury price',
     },
     {
       icon: Palette,
-      title: 'Customizable options',
+      title: 'Fully customizable',
       description: 'Personalize to match your vision',
     },
     {
@@ -85,7 +100,7 @@ export default function HomePage() {
 
             {/* Tagline */}
             <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light tracking-wide animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-              personalized With Love
+              Personalized With Love
             </p>
 
             {/* CTA Buttons */}
@@ -93,7 +108,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 className="rounded-full px-8 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                onClick={() => navigate({ to: '/bouquets' })}
+                onClick={() => navigate({ to: '/custom-orders' })}
               >
                 Shop Now
               </Button>
@@ -132,7 +147,7 @@ export default function HomePage() {
             subtitle="Explore our handcrafted products designed with love"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {categories.map((category, index) => {
               const Icon = category.icon;
               return (
@@ -190,6 +205,55 @@ export default function HomePage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </Section>
+
+      {/* Contact Section */}
+      <Section className="bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title="Get in Touch" subtitle="We'd love to hear from you" />
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="border-primary/20 shadow-lg">
+              <CardContent className="pt-8 space-y-6">
+                {/* Instagram */}
+                <div className="flex items-center justify-center space-x-3">
+                  <SiInstagram className="h-6 w-6 text-primary" />
+                  <a
+                    href="https://instagram.com/_the.desva_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-semibold text-primary hover:underline"
+                  >
+                    @_the.desva_
+                  </a>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center justify-center space-x-3">
+                  <Mail className="h-6 w-6 text-primary" />
+                  <a
+                    href="mailto:thedesvaofficial@gmail.com"
+                    className="text-lg font-semibold text-primary hover:underline"
+                  >
+                    thedesvaofficial@gmail.com
+                  </a>
+                </div>
+
+                {/* DM Button */}
+                <div className="pt-4">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full"
+                    onClick={() => window.open('https://instagram.com/_the.desva_', '_blank')}
+                  >
+                    <SiInstagram className="mr-2 h-5 w-5" />
+                    DM Us on Instagram
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </Section>

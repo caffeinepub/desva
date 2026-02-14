@@ -1,277 +1,150 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "DESVA boutique website (React + TS + Tailwind) with collections pages and custom order form",
+  "title": "Bouquet Collection: 6-card luxury grid with updated pricing, descriptions, and premium soft-white images",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Add a site-wide layout (top nav + footer) and routes for Home, each collection page, and Custom Orders.",
+      "summary": "Refactor /bouquets to a single “Bouquet Collection” section that renders exactly 6 premium product cards, each with image, name, short description, and pricing details.",
       "acceptanceCriteria": [
-        "Navigation links to all pages: Home, Bouquets, Polaroids, Bookmarks, Customized Cards, Custom Orders.",
-        "Footer appears on all pages and contains an Instagram link, a contact email text, and the line “Made with Love by DESVA”.",
-        "All routes render without blank screens and have consistent spacing/typography."
+        "/bouquets renders one Bouquet Collection section containing 6 product cards for: Ribbon Flower Bouquet, Artificial Flower Bouquet, Natural Flower Bouquet, Pipe Cleaner Flower Bouquet, Polaroid Bouquet, Customized Bouquet.",
+        "Each card displays: image, name, short description, and pricing details (tiers or starting price as specified).",
+        "Text and pricing match the user prompt exactly (including the Pipe Cleaner note text)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the app router and route table for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, and Custom Orders; wrap routes with a shared layout that renders the top navigation and footer. Use shadcn-ui building blocks (e.g., Button, navigation/menu primitives where appropriate) by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/SiteLayout.tsx",
-          "operation": "create",
-          "description": "Implement a reusable layout component with consistent page container spacing/typography; include top navigation and a simple footer that renders on every page. Use shadcn-ui components for structure and interactive elements (e.g., Button) by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/TopNav.tsx",
-          "operation": "create",
-          "description": "Add a responsive top navigation with links to all required routes and optional brand area for the DESVA logo. Use shadcn-ui components for buttons/menus (mobile dropdown) by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/SiteFooter.tsx",
-          "operation": "create",
-          "description": "Add a simple footer containing: an Instagram outbound link, a contact email text, and the exact line “Made with Love by DESVA”. Ensure it appears on all pages."
-        },
-        {
-          "path": "frontend/src/main.tsx",
+          "path": "frontend/src/pages/BouquetCollectionPage.tsx",
           "operation": "modify",
-          "description": "Ensure the app renders the newly created frontend/src/App.tsx and that global providers remain intact (e.g., query client / identity provider) while routing works."
+          "description": "Replace the current split layout (3-card grid + separate Pipe Cleaner feature card) with a single main Section titled “Bouquet Collection” that contains a responsive grid rendering exactly 6 cards. Each card must show the assigned image, bouquet name, the exact short description for that bouquet, and the correct pricing details (tier list or “Starting from” line as required). Use shadcn-ui Card/Badge (and any existing UI primitives already imported) to keep a clean, premium card presentation. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Implement the Home page with hero, intro, featured categories grid, why-choose section, and smooth in-page scrolling.",
+      "summary": "Update bouquet product copy so all 6 cards match the provided descriptions and pricing exactly, including the Pipe Cleaner customization note.",
       "acceptanceCriteria": [
-        "Hero displays brand name “DESVA”, tagline exactly “personalized With Love”, and the uploaded logo image.",
-        "“Shop Now” and “Explore Collections” buttons are visible and navigate users to relevant sections/pages (no dead buttons).",
-        "Featured categories are displayed in an Instagram-style grid and each item links to its respective collection page.",
-        "“Why Choose DESVA” renders the four bullets exactly as provided."
+        "Prices displayed on the Bouquet Collection page match the prompt exactly (including ₹200/₹250/₹300+ for Pipe Cleaner, and Starting from ₹350/₹550 for Polaroid/Customized).",
+        "The Pipe Cleaner card includes the note text exactly: “Final price depends on customization.”",
+        "Each bouquet card includes its specific short description (not generic placeholder text like “Choose your preferred tier”)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "create",
-          "description": "Create the Home page with: (1) Hero (soft pastel pink background) showing “DESVA”, the uploaded logo image, and tagline “personalized With Love”, plus CTAs “Shop Now” and “Explore Collections”; (2) Intro text section with the provided DESVA description; (3) Featured Categories preview cards for Bouquets, Polaroids, Bookmarks, Customized Cards in an Instagram-style grid; (4) “Why Choose DESVA” section with the four bullets exactly as provided; add smooth scrolling behavior for in-page section navigation where applicable. Use shadcn-ui components (e.g., Button, Card) by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/home/FeaturedCategoryCard.tsx",
-          "operation": "create",
-          "description": "Create a reusable category preview card component that links to a collection route and supports an Instagram-style grid (hover lift, rounded corners). Use shadcn-ui Card/Button components by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/pages/BouquetCollectionPage.tsx",
           "operation": "modify",
-          "description": "Wire the Home route to render frontend/src/pages/HomePage.tsx and ensure navigation entries target Home sections/collections as required."
+          "description": "Update the data rendered by the 6 bouquet cards to match the prompt exactly: (1) Ribbon: desc “Handmade ribbon flower bouquet with elegant wrapping.” tiers Normal ₹89, Premium ₹119; (2) Artificial: desc “Long-lasting artificial flower bouquet with premium finish.” tiers Normal ₹89, Premium ₹119; (3) Natural: desc “Fresh natural flower bouquet arranged beautifully.” tiers Normal ₹89, Premium ₹119; (4) Pipe Cleaner: tiers Normal ₹200, Premium ₹250, Customized Premium ₹300+ plus note text exactly “Final price depends on customization.”; (5) Polaroid: desc “Creative bouquet designed using polaroid photo memories.” pricing “Starting from ₹350”; (6) Customized: desc “Fully customized bouquet designed according to theme and customer preferences.” pricing “Starting from ₹550”. Ensure no placeholder descriptions remain. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Create Bouquet Collection page with all bouquet types, tiers/prices, and the customized pricing note.",
+      "summary": "Apply a responsive, equal-spacing luxury grid style on a soft white/beige background with elegant, premium typography.",
       "acceptanceCriteria": [
-        "All bouquet types and all listed tiers/prices render exactly with the ₹ symbol and values.",
-        "The customized pricing note appears on the page exactly as provided.",
-        "Layout uses a clean, mobile-friendly grid/list that matches the site design system."
+        "Bouquet Collection section background is soft white/beige (not a colorful gradient).",
+        "Grid is responsive (1 column on small screens; increases with breakpoints) and maintains equal spacing between cards.",
+        "Card styling reads as premium (clean borders/shadows, consistent spacing/typography)."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/BouquetCollectionPage.tsx",
-          "operation": "create",
-          "description": "Implement Bouquet Collection content exactly as specified: Natural/Artificial/Ribbon bouquets with Basic – ₹89 and Premium – ₹119; Pipe Cleaner Flower Bouquet split into Normal – ₹200, Medium / Premium – ₹250, Customized Premium – Starting ₹300+; include note exactly “Customized pricing may vary based on design complexity.” Use an Instagram-style responsive grid/list and shadcn-ui Card/typography primitives by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Register the Bouquet Collection route to render frontend/src/pages/BouquetCollectionPage.tsx and ensure it is reachable from the top navigation."
+          "description": "Adjust Bouquet Collection section styling to use a soft white/beige aesthetic (e.g., leveraging existing theme tokens like background/secondary/muted) and remove any colorful gradients. Ensure the grid is responsive (1 column on small screens, scaling up across breakpoints) with consistent gap spacing, and ensure card styling is premium (subtle shadow/border, consistent padding, elegant serif headings already used). Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Create Polaroid Collection page with sizes/prices and the provided description.",
+      "summary": "Add the 6 uploaded bouquet images as static assets and remap bouquet images in the correct 1–6 order for the Bouquet Collection cards.",
       "acceptanceCriteria": [
-        "All three size options and prices render exactly as specified.",
-        "Description renders exactly as provided."
+        "The bouquet cards render images sourced from the new uploaded asset set (not older IMG_6957-1/IMG_6952-1/etc).",
+        "Image-to-product assignment matches the prompt order: (1) Ribbon, (2) Artificial, (3) Natural, (4) Pipe Cleaner, (5) Polaroid Bouquet, (6) Customized Bouquet.",
+        "No broken image links appear on /bouquets."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/PolaroidCollectionPage.tsx",
+          "path": "frontend/public/assets/IMG_6954.jpeg",
           "operation": "create",
-          "description": "Implement Polaroid Collection page showing: Square – ₹9, Rectangle – ₹9, Large – ₹11, plus the description exactly: “High-quality printed polaroid-style photo keepsakes. Perfect for memories, events, and gifts.” Use shadcn-ui Card/typography primitives by composition only; verify the component's usage instructions before implementing."
+          "description": "Add the uploaded bouquet image IMG_6954.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/public/assets/IMG_6959.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded bouquet image IMG_6959.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6960-5.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded bouquet image IMG_6960-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6958-5.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded bouquet image IMG_6958-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6967-5.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded bouquet image IMG_6967-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6966-5.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded bouquet image IMG_6966-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
+        },
+        {
+          "path": "frontend/src/lib/catalogImageMap.ts",
           "operation": "modify",
-          "description": "Register the Polaroid Collection route to render frontend/src/pages/PolaroidCollectionPage.tsx and ensure it is reachable from the top navigation."
+          "description": "Update bouquet image mappings so the Bouquet Collection uses the correct assigned images in the exact 1–6 order: Ribbon->IMG_6954.jpeg, Artificial->IMG_6959.jpeg, Natural->IMG_6960-5.jpeg, Pipe Cleaner->IMG_6958-5.jpeg, Polaroid->IMG_6967-5.jpeg, Customized->IMG_6966-5.jpeg. Extend the bouquet image helper(s) as needed so BouquetCollectionPage can request these 6 bouquet image keys without broken paths."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Create Bookmark Collection page with starting price and provided description.",
+      "summary": "Generate premium-edited soft white/beige background versions of all 6 bouquet images and wire the Bouquet Collection to use these generated images.",
       "acceptanceCriteria": [
-        "Starting price renders exactly “Starting Price – ₹49”.",
-        "Description renders exactly as provided."
+        "There are 6 generated bouquet images in frontend/public/assets/generated and the Bouquet Collection uses them (not the raw uploads).",
+        "Generated images visibly have a soft white/beige background and subtle shadow, and the bouquet is centered without altering product colors/design.",
+        "Generated images are high resolution and consistently sized for a uniform grid presentation."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/BookmarkCollectionPage.tsx",
+          "path": "frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Implement Bookmark Collection page showing exactly “Starting Price – ₹49” and the description exactly: “Aesthetic and personalized bookmarks perfect for students, farewell gifts, and return gifts.” Use shadcn-ui Card/typography primitives by composition only; verify the component's usage instructions before implementing."
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png."
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png."
+        },
+        {
+          "path": "frontend/src/lib/catalogImageMap.ts",
           "operation": "modify",
-          "description": "Register the Bookmark Collection route to render frontend/src/pages/BookmarkCollectionPage.tsx and ensure it is reachable from the top navigation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Create Customized Card Collection page with price and provided description.",
-      "acceptanceCriteria": [
-        "Price renders exactly “Price – ₹250”.",
-        "Description renders exactly as provided."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/CustomizedCardCollectionPage.tsx",
-          "operation": "create",
-          "description": "Implement Customized Card Collection page showing exactly “Price – ₹250” and the description exactly: “Fully customized event cards for farewell, bridal, birthdays, and special occasions.” Use shadcn-ui Card/typography primitives by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Register the Customized Card Collection route to render frontend/src/pages/CustomizedCardCollectionPage.tsx and ensure it is reachable from the top navigation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Create Custom Orders page with required fields, Instagram DM line, and a robust success state on submit.",
-      "acceptanceCriteria": [
-        "All listed fields are present with appropriate input types (Quantity numeric, Date Required date input).",
-        "Submitting the form shows a clear success state and does not lose entered data unexpectedly.",
-        "The Instagram DM line is visible exactly as provided."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/CustomOrdersPage.tsx",
-          "operation": "create",
-          "description": "Create the Custom Orders page with a form containing: Name, Product Type, Event Type, Quantity (numeric), Custom Message, Date Required (date input); display the line exactly “DM us on Instagram for quick custom orders.” Implement submit flow that calls the existing backend interface submit function and shows a clear success state while preserving the entered data unless the user explicitly resets. Use shadcn-ui Form/Input/Textarea/Button components by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/lib/customOrdersApi.ts",
-          "operation": "create",
-          "description": "Add a small frontend API wrapper that uses the existing core-infrastructure backend connection to call custom order submission capabilities (and optionally fetch submissions for testing UI states). Verify the core-infrastructure usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Register the Custom Orders route to render frontend/src/pages/CustomOrdersPage.tsx and ensure it is reachable from the top navigation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "summary": "Apply the site-wide boutique design style (pastel palette, rounded buttons, elegant typography, grids, mobile responsiveness, subtle animations).",
-      "acceptanceCriteria": [
-        "Buttons across the site have rounded styling and consistent hover/focus states.",
-        "Pages use consistent typography and spacing with a soft pastel/cream/white aesthetic (no harsh or cluttered layouts).",
-        "Grids resemble an Instagram-style product grid on desktop and collapse cleanly on mobile.",
-        "Subtle animations/transitions are present (e.g., section fade/slide-in, hover lift on cards) without feeling busy."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "create",
-          "description": "Create global Tailwind layer styles and CSS variables to achieve the requested soft pastel palette and luxury boutique feel (backgrounds, foregrounds, radii, focus rings, typography defaults, smooth transitions). Ensure buttons and cards have consistent rounded styling and hover/focus states."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend/adjust Tailwind theme tokens (via CSS variable-backed colors already present) and ensure animations/transitions utilities are available for subtle section and card interactions."
-        },
-        {
-          "path": "frontend/src/components/ui/Section.tsx",
-          "operation": "create",
-          "description": "Add a small reusable Section wrapper for consistent vertical spacing, headings, and optional subtle enter animations used across pages (to keep pages uncluttered and consistent). Use shadcn-ui typography conventions where applicable by composition only; verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Integrate the uploaded logo image as a static frontend asset and use it in the Home hero and optionally the nav brand area.",
-      "acceptanceCriteria": [
-        "Logo renders crisply without stretching and maintains aspect ratio.",
-        "Logo is bundled as a static asset served by the frontend (not fetched from the backend)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/IMG_5343.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded logo image (IMG_5343.jpeg) as a static public asset to be used by the Home hero and (optionally) top navigation brand area."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Wire the static logo asset into the Home hero ensuring it maintains aspect ratio and renders crisply (no stretching). Use shadcn-ui layout primitives by composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/TopNav.tsx",
-          "operation": "modify",
-          "description": "Optionally render the static logo asset in the navigation brand area while keeping it responsive and non-distorting. Use shadcn-ui components by composition only; verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "summary": "Create and enforce a coherent visual theme system (colors, type scale, spacing, radii) across the entire site.",
-      "acceptanceCriteria": [
-        "A consistent set of design tokens/styles is used site-wide (not ad-hoc styles per page).",
-        "No pages deviate into a different look-and-feel; all sections appear part of the same brand system."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/design/tokens.ts",
-          "operation": "create",
-          "description": "Centralize design tokens (brand colors, spacing scale references, radii, type scale constants) to support consistent usage across pages/components (paired with Tailwind/CSS variables)."
-        },
-        {
-          "path": "frontend/src/components/layout/SiteLayout.tsx",
-          "operation": "modify",
-          "description": "Ensure the layout applies consistent container widths, typography defaults, and spacing using the shared token system so all pages inherit the same brand feel."
+          "description": "Update the Bouquet Collection image mapping to reference the generated assets (frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png) so /bouquets renders these premium-edited versions instead of raw uploads."
         },
         {
           "path": "frontend/src/pages/BouquetCollectionPage.tsx",
           "operation": "modify",
-          "description": "Refactor styling to rely on the shared token system and reusable layout/section primitives (avoid ad-hoc per-page styling) while preserving the exact required text/prices."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Add generated favicon + app icons matching the logo style and serve them as static frontend assets.",
-      "acceptanceCriteria": [
-        "Favicon and app icons exist in the frontend public assets and are referenced by the app so the browser tab icon is set.",
-        "Generated assets are stored under frontend/public/assets/generated and are not routed through the backend."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/desva-favicon.dim_64x64.png",
-          "operation": "create",
-          "description": "Add generated favicon asset at frontend/public/assets/generated/desva-favicon.dim_64x64.png."
-        },
-        {
-          "path": "frontend/public/assets/generated/desva-appicon.dim_180x180.png",
-          "operation": "create",
-          "description": "Add generated app icon asset at frontend/public/assets/generated/desva-appicon.dim_180x180.png."
-        },
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Reference the generated icons in the HTML head (favicon + app icon) so the browser tab icon and app icon metadata are set, using the static assets at frontend/public/assets/generated/desva-favicon.dim_64x64.png and frontend/public/assets/generated/desva-appicon.dim_180x180.png."
+          "description": "Ensure BouquetCollectionPage uses the updated catalog image mapping (generated softwhite assets) for all 6 cards so the displayed images are the premium-edited versions, consistently sized for a uniform luxury grid. Verify the component's usage instructions before implementing."
         }
       ]
     }

@@ -2,21 +2,19 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-site-wide-layout-with-a-top-navigation-and-a-simple-footer-and-add-routes-for-home-bouquet-collection-polaroid-collection-bookmark-collection-customized-card-collection-and-custom-orders",
-      "featureTitle": "Create a site-wide layout with a top navigation and a simple footer, and add routes for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, and Custom Orders.",
+      "featureId": "feature-update-the-bouquet-collection-page-to-present-a-single-main-section-titled-bouquet-collection-containing-exactly-6-product-cards-in-a-clean-premium-grid-layout-6-items-total-each-showing-product-image-product-name-short-description-and-pricing-details-matching-the-user-provided-bouquet-types-and-copy",
+      "featureTitle": "Update the Bouquet Collection page to present a single main section titled “Bouquet Collection” containing exactly 6 product cards in a clean, premium grid layout (6 items total), each showing: product image, product name, short description, and pricing details, matching the user-provided bouquet types and copy.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/layout/SiteFooter.tsx",
-        "frontend/src/components/layout/SiteLayout.tsx",
-        "frontend/src/components/layout/TopNav.tsx",
-        "frontend/src/main.tsx"
+        "frontend/src/pages/BouquetCollectionPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
         "REQ-1"
@@ -24,18 +22,19 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-the-home-page-sections-1-hero-with-large-brand-name-desva-the-uploaded-logo-image-tagline-personalized-with-love-soft-pastel-pink-background-and-two-ctas-shop-now-and-explore-collections-2-short-intro-section-with-the-provided-desva-description-3-featured-categories-preview-cards-for-bouquets-polaroids-bookmarks-customized-cards-4-why-choose-desva-section-with-the-4-bullet-points-include-smooth-scrolling-for-in-page-sections-where-applicable",
-      "featureTitle": "Implement the Home page sections: (1) Hero with large brand name “DESVA”, the uploaded logo image, tagline “personalized With Love”, soft pastel pink background, and two CTAs “Shop Now” and “Explore Collections”; (2) Short Intro section with the provided DESVA description; (3) Featured Categories preview cards for Bouquets, Polaroids, Bookmarks, Customized Cards; (4) “Why Choose DESVA” section with the 4 bullet points; include smooth scrolling for in-page sections where applicable.",
+      "featureId": "feature-ensure-bouquet-card-content-matches-the-provided-descriptions-and-pricing-exactly-ribbon-flower-bouquet-description-handmade-ribbon-flower-bouquet-with-elegant-wrapping-pricing-tiers-normal-89-premium-119-artificial-flower-bouquet-description-long-lasting-artificial-flower-bouquet-with-premium-finish-pricing-tiers-normal-89-premium-119-natural-flower-bouquet-description-fresh-natural-flower-bouquet-arranged-beautifully-pricing-tiers-normal-89-premium-119-pipe-cleaner-flower-bouquet-pricing-tiers-normal-200-premium-250-customized-premium-300-and-include-note-final-price-depends-on-customization-polaroid-bouquet-description-creative-bouquet-designed-using-polaroid-photo-memories-pricing-starting-from-350-customized-bouquet-description-fully-customized-bouquet-designed-according-to-theme-and-customer-preferences-pricing-starting-from-550",
+      "featureTitle": "Ensure bouquet card content matches the provided descriptions and pricing exactly:\n- Ribbon Flower Bouquet: Description “Handmade ribbon flower bouquet with elegant wrapping.” Pricing tiers: Normal ₹89, Premium ₹119\n- Artificial Flower Bouquet: Description “Long-lasting artificial flower bouquet with premium finish.” Pricing tiers: Normal ₹89, Premium ₹119\n- Natural Flower Bouquet: Description “Fresh natural flower bouquet arranged beautifully.” Pricing tiers: Normal ₹89, Premium ₹119\n- Pipe Cleaner Flower Bouquet: Pricing tiers: Normal ₹200, Premium ₹250, Customized Premium ₹300+ and include note: “Final price depends on customization.”\n- Polaroid Bouquet: Description “Creative bouquet designed using polaroid photo memories.” Pricing: Starting from ₹350\n- Customized Bouquet: Description “Fully customized bouquet designed according to theme and customer preferences.” Pricing: Starting from ₹550",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/HomePage.tsx"
+        "frontend/src/pages/BouquetCollectionPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
         "REQ-2"
@@ -43,10 +42,9 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-the-bouquet-collection-page-showing-4-bouquet-types-with-the-exact-pricing-tiers-provided-and-include-the-note-customized-pricing-may-vary-based-on-design-complexity-also-include-the-pipe-cleaner-flower-bouquet-pricing-split-into-normal-200-medium-premium-250-customized-premium-starting-300",
-      "featureTitle": "Create the Bouquet Collection page showing 4 bouquet types with the exact pricing tiers provided, and include the note: “Customized pricing may vary based on design complexity.” Also include the Pipe Cleaner Flower Bouquet pricing split into: Normal – ₹200, Medium / Premium – ₹250, Customized Premium – Starting ₹300+.",
+      "featureId": "feature-implement-the-bouquet-collection-grid-as-a-responsive-equal-spacing-layout-with-a-luxury-boutique-feel-on-a-soft-white-beige-aesthetic-background-the-grid-must-be-mobile-responsive-and-use-elegant-typography-consistent-with-a-premium-catalog",
+      "featureTitle": "Implement the Bouquet Collection grid as a responsive, equal-spacing layout with a luxury boutique feel on a soft white / beige aesthetic background. The grid must be mobile responsive and use elegant typography consistent with a premium catalog.",
       "files": [
-        "frontend/src/App.tsx",
         "frontend/src/pages/BouquetCollectionPage.tsx"
       ],
       "components": [
@@ -54,7 +52,9 @@
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
         "REQ-3"
@@ -62,18 +62,19 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-the-polaroid-collection-page-with-the-three-sizes-and-prices-square-9-rectangle-9-large-11-and-display-the-provided-short-description",
-      "featureTitle": "Create the Polaroid Collection page with the three sizes and prices: Square – ₹9, Rectangle – ₹9, Large – ₹11, and display the provided short description.",
+      "featureId": "feature-add-the-6-uploaded-bouquet-images-as-static-frontend-assets-and-update-frontend-image-mappings-so-the-bouquet-collection-cards-use-the-assigned-images-in-order-1st-6th-with-the-provided-filenames-img-6954-jpeg-img-6959-jpeg-img-6960-5-jpeg-img-6958-5-jpeg-img-6967-5-jpeg-img-6966-5-jpeg",
+      "featureTitle": "Add the 6 uploaded bouquet images as static frontend assets and update frontend image mappings so the Bouquet Collection cards use the assigned images in order (1st–6th) with the provided filenames: IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/PolaroidCollectionPage.tsx"
+        "frontend/src/lib/catalogImageMap.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
         "REQ-4"
@@ -81,105 +82,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-the-bookmark-collection-page-showing-starting-price-49-and-the-provided-description",
-      "featureTitle": "Create the Bookmark Collection page showing Starting Price – ₹49 and the provided description.",
+      "featureId": "feature-generate-and-use-premium-edited-versions-of-all-6-bouquet-images-that-preserve-original-product-colors-design-while-replacing-the-background-with-soft-white-or-beige-adding-a-subtle-shadow-maintaining-high-resolution-and-centering-the-product-store-generated-images-in-frontend-public-assets-generated-and-ensure-the-bouquet-collection-uses-these-generated-images",
+      "featureTitle": "Generate and use premium-edited versions of all 6 bouquet images that preserve original product colors/design while replacing the background with soft white or beige, adding a subtle shadow, maintaining high resolution, and centering the product. Store generated images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/BookmarkCollectionPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-the-customized-card-collection-page-showing-price-250-and-the-provided-description",
-      "featureTitle": "Create the Customized Card Collection page showing Price – ₹250 and the provided description.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/CustomizedCardCollectionPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-the-custom-orders-page-with-a-form-containing-these-fields-name-product-type-event-type-quantity-custom-message-date-required-include-the-line-dm-us-on-instagram-for-quick-custom-orders",
-      "featureTitle": "Create the Custom Orders page with a form containing these fields: Name, Product Type, Event Type, Quantity, Custom Message, Date Required; include the line “DM us on Instagram for quick custom orders.”",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/CustomOrdersPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-apply-the-requested-site-wide-design-style-soft-pastel-palette-blush-pink-beige-cream-light-blue-white-clean-backgrounds-rounded-buttons-minimal-icons-elegant-typography-instagram-style-product-grids-mobile-friendly-layout-and-smooth-transitions-animations-ensure-the-overall-look-is-premium-minimal-soft-feminine-not-cluttered-and-luxury-but-affordable",
-      "featureTitle": "Apply the requested site-wide design style: soft pastel palette (blush pink, beige, cream, light blue), white clean backgrounds, rounded buttons, minimal icons, elegant typography, Instagram-style product grids, mobile-friendly layout, and smooth transitions/animations; ensure the overall look is premium, minimal, soft feminine, not cluttered, and luxury-but-affordable.",
-      "files": [
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-9"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-integrate-the-uploaded-logo-image-img-5343-jpeg-as-a-static-frontend-asset-and-use-it-in-the-home-hero-and-optionally-in-the-navigation-bar-brand-area",
-      "featureTitle": "Integrate the uploaded logo image (IMG_5343.jpeg) as a static frontend asset and use it in the Home hero and (optionally) in the navigation bar brand area.",
-      "files": [
-        "frontend/src/components/layout/TopNav.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-coherent-visual-theme-system-colors-type-scale-spacing-radii-aligned-to-the-provided-pastel-luxury-boutique-direction-and-enforce-it-consistently-across-all-pages-and-components",
-      "featureTitle": "Create a coherent visual theme system (colors, type scale, spacing, radii) aligned to the provided pastel/luxury-boutique direction and enforce it consistently across all pages and components.",
-      "files": [
-        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/lib/catalogImageMap.ts",
         "frontend/src/pages/BouquetCollectionPage.tsx"
       ],
       "components": [
@@ -187,28 +93,12 @@
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-generated-icon-assets-favicon-app-icons-that-visually-match-the-uploaded-logo-style-and-serve-them-as-static-assets-from-the-frontend",
-      "featureTitle": "Add generated icon assets (favicon + app icons) that visually match the uploaded logo style, and serve them as static assets from the frontend.",
-      "files": [
-        "frontend/index.html"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
+        "REQ-5"
       ],
       "confidence": "high"
     }

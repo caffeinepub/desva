@@ -1,14 +1,17 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useActor } from './useActor';
-import type { CustomOrder } from '../backend';
+import type { CustomOrder, ExternalBlob } from '../backend';
 
 interface SubmitOrderParams {
   name: string;
-  productType: string;
-  eventType: string;
+  product: string;
+  category: string;
+  phoneNumber: string;
+  email: string;
   quantity: bigint;
-  customMessage: string;
-  dateRequired: string;
+  customizationDetails: string;
+  images: ExternalBlob[];
+  deliveryDate: string;
 }
 
 export function useSubmitCustomOrder() {
@@ -20,11 +23,14 @@ export function useSubmitCustomOrder() {
       if (!actor) throw new Error('Actor not initialized');
       return actor.submitCustomOrder(
         params.name,
-        params.productType,
-        params.eventType,
+        params.product,
+        params.category,
+        params.phoneNumber,
+        params.email,
         params.quantity,
-        params.customMessage,
-        params.dateRequired
+        params.customizationDetails,
+        params.images,
+        params.deliveryDate
       );
     },
     onSuccess: () => {

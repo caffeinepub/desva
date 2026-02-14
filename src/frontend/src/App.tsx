@@ -6,6 +6,8 @@ import PolaroidCollectionPage from './pages/PolaroidCollectionPage';
 import BookmarkCollectionPage from './pages/BookmarkCollectionPage';
 import CustomizedCardCollectionPage from './pages/CustomizedCardCollectionPage';
 import CustomOrdersPage from './pages/CustomOrdersPage';
+import FramesMemoryKeepsakesPage from './pages/FramesMemoryKeepsakesPage';
+import HandcraftedCuteEssentialsPage from './pages/HandcraftedCuteEssentialsPage';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -51,6 +53,18 @@ const customOrdersRoute = createRoute({
   component: CustomOrdersPage,
 });
 
+const framesMemoryRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/frames-keepsakes',
+  component: FramesMemoryKeepsakesPage,
+});
+
+const cuteEssentialsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/cute-essentials',
+  component: HandcraftedCuteEssentialsPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   bouquetsRoute,
@@ -58,6 +72,8 @@ const routeTree = rootRoute.addChildren([
   bookmarksRoute,
   cardsRoute,
   customOrdersRoute,
+  framesMemoryRoute,
+  cuteEssentialsRoute,
 ]);
 
 const router = createRouter({ routeTree });

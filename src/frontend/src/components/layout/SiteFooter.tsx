@@ -22,18 +22,21 @@ export default function SiteFooter() {
             <h4 className="text-sm font-semibold text-foreground">Get in Touch</h4>
             <div className="flex flex-col space-y-2 items-center md:items-start">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/_the.desva_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <SiInstagram className="h-4 w-4" />
-                <span>Follow us on Instagram</span>
+                <span>@_the.desva_</span>
               </a>
-              <div className="inline-flex items-center space-x-2 text-sm text-muted-foreground">
+              <a
+                href="mailto:thedesvaofficial@gmail.com"
+                className="inline-flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Mail className="h-4 w-4" />
-                <span>contact@desva.com</span>
-              </div>
+                <span>thedesvaofficial@gmail.com</span>
+              </a>
             </div>
           </div>
 

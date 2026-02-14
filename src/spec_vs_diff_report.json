@@ -1,77 +1,49 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T12:33:14.278Z",
-  "summary": "Most core pages/routes and a shared layout were added, along with a Motoko backend actor and frontend hooks for submitting/fetching custom orders. However, several requirements cannot be confirmed or appear not to match the spec exactly (notably exact text formatting for prices/descriptions and required generated icon assets). The diff also introduces unrequested Internet Identity/auth scaffolding and an extra caffeine.ai attribution link in the footer.",
+  "generatedAt": "2026-02-14T15:41:50.724Z",
+  "summary": "Bouquet Collection page code and image mapping were updated to render 6 cards and point bouquet images to generated soft-white assets. However, the diff does not show the required generated image assets being added, and at least one product description does not match the requested copy exactly. Several unrelated catalog image mappings and metadata/state files were also modified beyond the Bouquet Collection requirements.",
   "missing_requirements": [
     {
+      "id": "REQ-2",
+      "requirement": "Ensure bouquet card content matches the provided descriptions and pricing exactly (including the specific short descriptions).",
+      "reason": "The Pipe Cleaner Flower Bouquet description does not match the requested text/copy; it uses a generic placeholder description instead of the provided copy set for each bouquet card.",
+      "evidence": [
+        "frontend/src/pages/BouquetCollectionPage.tsx (Pipe Cleaner Flower Bouquet: description: 'Unique and creative designs.')"
+      ]
+    },
+    {
       "id": "REQ-5",
-      "requirement": "Bookmark Collection page must render the starting price exactly as “Starting Price – ₹49” and the provided description exactly as provided.",
-      "reason": "The page shows “Starting Price” as a title and “₹49” in a separate badge, not the exact combined string “Starting Price – ₹49”. The description text present cannot be verified to match the exact provided description.",
+      "requirement": "Store 6 generated premium-edited bouquet images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
+      "reason": "The code references generated images under /assets/generated, but the diff shows no new static assets added under frontend/public/assets/generated, so the requirement to store/use the generated images is not evidenced as implemented.",
       "evidence": [
-        "frontend/src/pages/BookmarkCollectionPage.tsx"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "requirement": "Customized Card Collection page must render the price exactly as “Price – ₹250” and the provided description exactly as provided.",
-      "reason": "The page shows “Price” as a title and “₹250” in a separate badge, not the exact combined string “Price – ₹250”. The description text present cannot be verified to match the exact provided description.",
-      "evidence": [
-        "frontend/src/pages/CustomizedCardCollectionPage.tsx"
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "requirement": "Add generated icon assets (favicon + app icons) under frontend/public/assets/generated and reference them so the browser tab icon is set.",
-      "reason": "No generated icon image files under frontend/public/assets/generated are shown in the diff summary. While the file summary mentions icon references in frontend/index.html, the required generated assets themselves are not evidenced in the provided diff summary.",
-      "evidence": [
-        "frontend-file-summaries.txt"
+        "frontend/src/lib/catalogImageMap.ts (references '/assets/generated/IMG_6954_softwhite.dim_1600x1600.png' etc.)",
+        "File diff summary: 'ADDED FILES: none'"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Internet Identity authentication scaffolding (provider/hooks) added, implying user login/auth support.",
-      "reason": "User accounts/authentication were explicitly listed as a non-goal; the diff adds Internet Identity integration and identity-based actor creation logic.",
+      "description": "Updated/added mappings for Polaroid Bouquet images, Frames & Memory Keepsakes images, Bookmarks image, Customized Cards image, and a Cute Essentials generated image array.",
+      "reason": "The request was specifically about Bouquet Collection and only allowed changes to other collection pages/mappings if needed to support Bouquet Collection images; these additional mappings appear unrelated to supporting Bouquet Collection images.",
       "evidence": [
-        "frontend/src/main.tsx",
-        "frontend/src/hooks/useInternetIdentity.ts",
-        "frontend/src/hooks/useActor.ts"
+        "frontend/src/lib/catalogImageMap.ts (polaroidBouquetImages, framesMemoryImages, bookmarksImage, customizedCardsImage, cuteEssentialsImages)"
       ]
     },
     {
-      "description": "Footer includes an unrequested caffeine.ai attribution/UTM link (“Built with … using caffeine.ai”).",
-      "reason": "REQ-1 only requested an Instagram link, contact email text, and the line “Made with Love by DESVA” in the footer; the caffeine.ai promotional link is additional functionality/content not requested.",
+      "description": "Modified project tracking/metadata files (frontend-file-summaries.txt and project_state.json).",
+      "reason": "Not requested as part of the build requirements; these are auxiliary state/summary updates not mentioned in the BuildRequest.",
       "evidence": [
-        "frontend/src/components/layout/SiteFooter.tsx"
+        "frontend-file-summaries.txt",
+        "project_state.json"
       ]
     }
   ],
-  "confidence": 0.64,
+  "confidence": 0.72,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/Section.tsx",
-    "frontend/src/components/layout/SiteFooter.tsx",
-    "frontend/src/components/layout/SiteLayout.tsx",
-    "frontend/src/components/layout/TopNav.tsx",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/lib/utils.ts",
-    "frontend/src/main.tsx",
-    "frontend/src/pages/BookmarkCollectionPage.tsx",
+    "frontend/src/lib/catalogImageMap.ts",
     "frontend/src/pages/BouquetCollectionPage.tsx",
-    "frontend/src/pages/CustomOrdersPage.tsx",
-    "frontend/src/pages/CustomizedCardCollectionPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/PolaroidCollectionPage.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

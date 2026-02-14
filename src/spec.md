@@ -1,16 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Build a boutique-style DESVA website with consistent pastel luxury styling, collection pages, and a custom orders form that saves submissions.
+**Goal:** Update the Bouquet Collection page to display exactly 6 bouquet products in a premium, responsive grid with the specified copy, pricing, and soft-white edited images.
 
 **Planned changes:**
-- Add a site-wide layout with top navigation + simple footer, and routes for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, Custom Orders.
-- Implement Home page sections: hero (DESVA brand name, uploaded logo, tagline “personalized With Love”, pastel pink background, CTAs “Shop Now” + “Explore Collections”), intro text, featured category preview grid linking to collections, and “Why Choose DESVA” bullets; include smooth scrolling for relevant sections.
-- Build collection pages with the exact provided pricing/labels and descriptions (Bouquets with tiers + custom pricing note; Polaroids sizes/prices + description; Bookmarks starting price + description; Customized Cards price + description).
-- Create Custom Orders page with form fields: Name, Product Type, Event Type, Quantity, Custom Message, Date Required; show “DM us on Instagram for quick custom orders.” and provide a clear success state on submit.
-- Add backend persistence for custom order submissions (store all fields + timestamp) with methods to create and fetch submissions for verification/testing; connect the frontend form to these methods with basic success/error handling.
-- Apply a coherent, site-wide visual theme system (pastel palette, elegant typography, spacing/radii) with rounded buttons, minimal icons, Instagram-style grids, mobile-friendly layout, and subtle transitions.
-- Integrate the uploaded logo image (IMG_5343.jpeg) as a static frontend asset for the Home hero (and optionally the nav brand area).
-- Add generated favicon and app icons that match the uploaded logo style and serve them as static frontend assets.
+- Update `/bouquets` to render one main section titled “Bouquet Collection” containing exactly 6 product cards.
+- Implement a clean, luxury boutique grid layout with equal spacing, elegant typography, and a soft white/beige aesthetic background; ensure responsive behavior across breakpoints.
+- Set each bouquet card’s content (name, short description, and pricing) to match the provided text exactly, including the Pipe Cleaner note: “Final price depends on customization.”
+- Add the 6 uploaded bouquet images as static frontend assets and map them to products in the specified order: (1) Ribbon (IMG_6954.jpeg), (2) Artificial (IMG_6959.jpeg), (3) Natural (IMG_6960-5.jpeg), (4) Pipe Cleaner (IMG_6958-5.jpeg), (5) Polaroid (IMG_6967-5.jpeg), (6) Customized (IMG_6966-5.jpeg).
+- Generate premium-edited versions of all 6 images (soft white/beige background, subtle shadow, centered product, preserve original colors/design) and use these generated images in the Bouquet Collection cards; store them under `frontend/public/assets/generated`.
 
-**User-visible outcome:** Users can browse DESVA’s home and collection pages in a consistent boutique style, and submit a custom order request via a form that is saved and can be fetched for testing.
+**User-visible outcome:** Visiting `/bouquets` shows a single “Bouquet Collection” section with 6 premium-looking bouquet cards, each with the correct image, description, and pricing, displayed in a responsive luxury grid.

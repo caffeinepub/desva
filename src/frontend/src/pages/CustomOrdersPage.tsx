@@ -8,32 +8,59 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useSubmitCustomOrder } from '@/hooks/useQueries';
 import { SiInstagram } from 'react-icons/si';
-import { CheckCircle2, Loader2 } from 'lucide-react';
+import { CheckCircle2, Loader2, Upload, X } from 'lucide-react';
+import { ExternalBlob } from '../backend';
 
 export default function CustomOrdersPage() {
   const [formData, setFormData] = useState({
     name: '',
-    productType: '',
-    eventType: '',
+    product: '',
+    category: '',
+    phoneNumber: '',
+    email: '',
     quantity: '',
-    customMessage: '',
-    dateRequired: '',
+    customizationDetails: '',
+    deliveryDate: '',
   });
 
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const submitMutation = useSubmitCustomOrder();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const filesArray = Array.from(e.target.files);
+      setSelectedFiles((prev) => [...prev, ...filesArray]);
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setSelectedFiles((prev) => prev.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     try {
+      // Convert files to ExternalBlob instances
+      const imageBlobs: ExternalBlob[] = [];
+      for (const file of selectedFiles) {
+        const arrayBuffer = await file.arrayBuffer();
+        const uint8Array = new Uint8Array(arrayBuffer);
+        const blob = ExternalBlob.fromBytes(uint8Array);
+        imageBlobs.push(blob);
+      }
+
       await submitMutation.mutateAsync({
         name: formData.name,
-        productType: formData.productType,
-        eventType: formData.eventType,
+        product: formData.product,
+        category: formData.category,
+        phoneNumber: formData.phoneNumber,
+        email: formData.email,
         quantity: BigInt(formData.quantity || '1'),
-        customMessage: formData.customMessage,
-        dateRequired: formData.dateRequired,
+        customizationDetails: formData.customizationDetails,
+        images: imageBlobs,
+        deliveryDate: formData.deliveryDate,
       });
       
       setShowSuccess(true);
@@ -46,27 +73,35 @@ export default function CustomOrdersPage() {
   const handleReset = () => {
     setFormData({
       name: '',
-      productType: '',
-      eventType: '',
+      product: '',
+      category: '',
+      phoneNumber: '',
+      email: '',
       quantity: '',
-      customMessage: '',
-      dateRequired: '',
+      customizationDetails: '',
+      deliveryDate: '',
     });
+    setSelectedFiles([]);
     setShowSuccess(false);
   };
 
   const productTypes = [
-    'Natural Flower Bouquet',
-    'Artificial Flower Bouquet',
     'Ribbon Flower Bouquet',
+    'Artificial Flower Bouquet',
+    'Natural Flower Bouquet',
     'Pipe Cleaner Flower Bouquet',
-    'Polaroid',
+    'Polaroid Bouquet',
+    'Customized Polaroid Bouquet',
+    'Polaroid Prints',
+    'Polaroid Book',
+    'Magazine Style Memory Album',
     'Bookmark',
     'Customized Card',
+    'Cute Accessories',
     'Other',
   ];
 
-  const eventTypes = [
+  const categories = [
     'Birthday',
     'Wedding',
     'Anniversary',
@@ -75,6 +110,9 @@ export default function CustomOrdersPage() {
     'Valentine\'s Day',
     'Mother\'s Day',
     'Father\'s Day',
+    'Bridal Shower',
+    'Baby Shower',
+    'Return Gift',
     'Other',
   ];
 
@@ -97,9 +135,22 @@ export default function CustomOrdersPage() {
               <CardContent className="pt-6">
                 <div className="flex items-center justify-center space-x-3 text-center">
                   <SiInstagram className="h-6 w-6 text-primary" />
-                  <p className="text-base font-medium text-foreground">
-                    DM us on Instagram for quick custom orders
-                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                    <p className="text-base font-medium text-foreground">
+                      DM us on Instagram
+                    </p>
+                    <a
+                      href="https://instagram.com/_the.desva_"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-semibold text-primary hover:underline"
+                    >
+                      @_the.desva_
+                    </a>
+                    <p className="text-base font-medium text-foreground">
+                      for quick custom orders
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -145,16 +196,16 @@ export default function CustomOrdersPage() {
                       />
                     </div>
 
-                    {/* Product Type */}
+                    {/* Product */}
                     <div className="space-y-2">
-                      <Label htmlFor="productType">Product Type *</Label>
+                      <Label htmlFor="product">Product *</Label>
                       <Select
-                        value={formData.productType}
-                        onValueChange={(value) => setFormData({ ...formData, productType: value })}
+                        value={formData.product}
+                        onValueChange={(value) => setFormData({ ...formData, product: value })}
                         required
                       >
-                        <SelectTrigger id="productType" className="rounded-lg">
-                          <SelectValue placeholder="Select a product type" />
+                        <SelectTrigger id="product" className="rounded-lg">
+                          <SelectValue placeholder="Select a product" />
                         </SelectTrigger>
                         <SelectContent>
                           {productTypes.map((type) => (
@@ -166,25 +217,53 @@ export default function CustomOrdersPage() {
                       </Select>
                     </div>
 
-                    {/* Event Type */}
+                    {/* Category */}
                     <div className="space-y-2">
-                      <Label htmlFor="eventType">Event Type *</Label>
+                      <Label htmlFor="category">Category *</Label>
                       <Select
-                        value={formData.eventType}
-                        onValueChange={(value) => setFormData({ ...formData, eventType: value })}
+                        value={formData.category}
+                        onValueChange={(value) => setFormData({ ...formData, category: value })}
                         required
                       >
-                        <SelectTrigger id="eventType" className="rounded-lg">
-                          <SelectValue placeholder="Select an event type" />
+                        <SelectTrigger id="category" className="rounded-lg">
+                          <SelectValue placeholder="Select a category" />
                         </SelectTrigger>
                         <SelectContent>
-                          {eventTypes.map((type) => (
-                            <SelectItem key={type} value={type}>
-                              {type}
+                          {categories.map((cat) => (
+                            <SelectItem key={cat} value={cat}>
+                              {cat}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
+                    </div>
+
+                    {/* Phone Number */}
+                    <div className="space-y-2">
+                      <Label htmlFor="phoneNumber">Phone Number *</Label>
+                      <Input
+                        id="phoneNumber"
+                        type="tel"
+                        placeholder="Your contact number"
+                        value={formData.phoneNumber}
+                        onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                        required
+                        className="rounded-lg"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                        className="rounded-lg"
+                      />
                     </div>
 
                     {/* Quantity */}
@@ -202,27 +281,76 @@ export default function CustomOrdersPage() {
                       />
                     </div>
 
-                    {/* Custom Message */}
+                    {/* Customization Details */}
                     <div className="space-y-2">
-                      <Label htmlFor="customMessage">Custom Message</Label>
+                      <Label htmlFor="customizationDetails">Customization Details</Label>
                       <Textarea
-                        id="customMessage"
+                        id="customizationDetails"
                         placeholder="Tell us about your vision, preferred colors, themes, or any special requests..."
-                        value={formData.customMessage}
-                        onChange={(e) => setFormData({ ...formData, customMessage: e.target.value })}
+                        value={formData.customizationDetails}
+                        onChange={(e) => setFormData({ ...formData, customizationDetails: e.target.value })}
                         rows={4}
                         className="rounded-lg resize-none"
                       />
                     </div>
 
-                    {/* Date Required */}
+                    {/* Image Upload */}
                     <div className="space-y-2">
-                      <Label htmlFor="dateRequired">Date Required *</Label>
+                      <Label htmlFor="images">Upload Images (Optional)</Label>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Input
+                            id="images"
+                            type="file"
+                            accept="image/*"
+                            multiple
+                            onChange={handleFileChange}
+                            className="rounded-lg"
+                          />
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="icon"
+                            onClick={() => document.getElementById('images')?.click()}
+                          >
+                            <Upload className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        
+                        {selectedFiles.length > 0 && (
+                          <div className="space-y-2">
+                            {selectedFiles.map((file, index) => (
+                              <div
+                                key={index}
+                                className="flex items-center justify-between p-2 rounded-lg bg-muted/50"
+                              >
+                                <span className="text-sm text-foreground truncate flex-1">
+                                  {file.name}
+                                </span>
+                                <Button
+                                  type="button"
+                                  variant="ghost"
+                                  size="icon"
+                                  className="h-8 w-8"
+                                  onClick={() => removeFile(index)}
+                                >
+                                  <X className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Delivery Date */}
+                    <div className="space-y-2">
+                      <Label htmlFor="deliveryDate">Delivery Date *</Label>
                       <Input
-                        id="dateRequired"
+                        id="deliveryDate"
                         type="date"
-                        value={formData.dateRequired}
-                        onChange={(e) => setFormData({ ...formData, dateRequired: e.target.value })}
+                        value={formData.deliveryDate}
+                        onChange={(e) => setFormData({ ...formData, deliveryDate: e.target.value })}
                         required
                         className="rounded-lg"
                       />

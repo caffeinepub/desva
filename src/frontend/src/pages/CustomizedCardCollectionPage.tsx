@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Section, SectionHeader } from '@/components/Section';
 import { Badge } from '@/components/ui/badge';
 import { PartyPopper, Heart, Cake, Users } from 'lucide-react';
+import { customizedCardsImage } from '@/lib/catalogImageMap';
 
 export default function CustomizedCardCollectionPage() {
   const occasions = [
@@ -40,24 +41,35 @@ export default function CustomizedCardCollectionPage() {
 
       <Section className="bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            {/* Pricing Card */}
-            <Card className="border-primary/20 shadow-lg max-w-md mx-auto">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-serif text-primary">Price</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <Badge variant="default" className="text-2xl font-bold px-8 py-3">
-                  ₹250
-                </Badge>
-              </CardContent>
-            </Card>
+          <div className="max-w-5xl mx-auto space-y-12">
+            {/* Product Image & Pricing */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="aspect-square w-full overflow-hidden rounded-2xl shadow-lg bg-muted/30">
+                <img
+                  src={customizedCardsImage}
+                  alt="Customized Cards"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
 
-            {/* Description */}
-            <div className="text-center max-w-2xl mx-auto">
-              <p className="text-lg text-foreground/90 leading-relaxed">
-                Fully customized event cards for farewell, bridal, birthdays, and special occasions.
-              </p>
+              <div className="space-y-6">
+                <Card className="border-primary/20 shadow-lg">
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-2xl font-serif text-primary">Price</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <Badge variant="default" className="text-2xl font-bold px-8 py-3">
+                      Starting from ₹249
+                    </Badge>
+                  </CardContent>
+                </Card>
+
+                <div className="text-center">
+                  <p className="text-lg text-foreground/90 leading-relaxed">
+                    Personalized event cards for farewell, bridal, birthday, and special occasions.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Occasions Grid */}
