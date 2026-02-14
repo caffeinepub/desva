@@ -1,0 +1,242 @@
+{
+  "kind": "build_request",
+  "title": "Build DESVA boutique-style website with collections pages and custom order form",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a site-wide layout with a top navigation and a simple footer, and add routes for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, and Custom Orders.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "1️⃣ HOME PAGE ... 💐 BOUQUET COLLECTION PAGE ... 📸 POLAROID COLLECTION PAGE ... 📚 BOOKMARK COLLECTION ... 💌 CUSTOMIZED CARD COLLECTION ... ✨ CUSTOM ORDERS PAGE"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation links to all pages: Home, Bouquets, Polaroids, Bookmarks, Customized Cards, Custom Orders.",
+        "Footer appears on all pages and contains an Instagram link, a contact email text, and the line “Made with Love by DESVA”.",
+        "All routes render without blank screens and have consistent spacing/typography."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the Home page sections: (1) Hero with large brand name “DESVA”, the uploaded logo image, tagline “personalized With Love”, soft pastel pink background, and two CTAs “Shop Now” and “Explore Collections”; (2) Short Intro section with the provided DESVA description; (3) Featured Categories preview cards for Bouquets, Polaroids, Bookmarks, Customized Cards; (4) “Why Choose DESVA” section with the 4 bullet points; include smooth scrolling for in-page sections where applicable.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Hero Section: • Large brand name DESVA and the logo is the image uploaded • Tagline: “personalized With Love” • Soft pastel pink background • Button: Shop Now • Button: Explore Collections",
+          "Short Intro Section: DESVA creates affordable yet premium handmade bouquets, bookmarks, polaroids, and customized gifts for special occasions.",
+          "Featured Categories Preview: • Bouquets • Polaroids • Bookmarks • Customized Cards",
+          "Why Choose DESVA: • Handmade with care • Affordable pricing • Customizable options • Trend-based designs",
+          "Smooth scrolling sections"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero displays brand name “DESVA”, tagline exactly “personalized With Love”, and the uploaded logo image.",
+        "“Shop Now” and “Explore Collections” buttons are visible and navigate users to relevant sections/pages (no dead buttons).",
+        "Featured categories are displayed in an Instagram-style grid and each item links to its respective collection page.",
+        "“Why Choose DESVA” renders the four bullets exactly as provided."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create the Bouquet Collection page showing 4 bouquet types with the exact pricing tiers provided, and include the note: “Customized pricing may vary based on design complexity.” Also include the Pipe Cleaner Flower Bouquet pricing split into: Normal – ₹200, Medium / Premium – ₹250, Customized Premium – Starting ₹300+.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "💐 BOUQUET COLLECTION PAGE\n\nWe offer 4 types of bouquets:\n\n1. Natural Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n2. Artificial Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n3. Ribbon Flower Bouquet\n\t•\tBasic – ₹89\n\t•\tPremium – ₹119\n\n4. Pipe Cleaner Flower Bouquet\n\nDivide into 3 categories:\n\t•\tNormal – ₹200\n\t•\tMedium / Premium – ₹250\n\t•\tCustomized Premium – Starting ₹300+\n\nAdd note:\n“Customized pricing may vary based on design complexity.”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All bouquet types and all listed tiers/prices render exactly with the ₹ symbol and values.",
+        "The customized pricing note appears on the page exactly as provided.",
+        "Layout uses a clean, mobile-friendly grid/list that matches the site design system."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create the Polaroid Collection page with the three sizes and prices: Square – ₹9, Rectangle – ₹9, Large – ₹11, and display the provided short description.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "📸 POLAROID COLLECTION PAGE\n\nThree sizes available:\n\t•\tSquare – ₹9\n\t•\tRectangle – ₹9\n\t•\tLarge – ₹11\n\nShort description:\nHigh-quality printed polaroid-style photo keepsakes. Perfect for memories, events, and gifts."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All three size options and prices render exactly as specified.",
+        "Description renders exactly as provided."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create the Bookmark Collection page showing Starting Price – ₹49 and the provided description.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "📚 BOOKMARK COLLECTION\n\nStarting Price – ₹49\n\nDescription:\nAesthetic and personalized bookmarks perfect for students, farewell gifts, and return gifts."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Starting price renders exactly “Starting Price – ₹49”.",
+        "Description renders exactly as provided."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create the Customized Card Collection page showing Price – ₹250 and the provided description.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "💌 CUSTOMIZED CARD COLLECTION\n\nPrice – ₹250\n\nDescription:\nFully customized event cards for farewell, bridal, birthdays, and special occasions."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Price renders exactly “Price – ₹250”.",
+        "Description renders exactly as provided."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create the Custom Orders page with a form containing these fields: Name, Product Type, Event Type, Quantity, Custom Message, Date Required; include the line “DM us on Instagram for quick custom orders.”",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "✨ CUSTOM ORDERS PAGE\n\nInclude a form:\n\t•\tName\n\t•\tProduct Type\n\t•\tEvent Type\n\t•\tQuantity\n\t•\tCustom Message\n\t•\tDate Required\n\nAdd:\n“DM us on Instagram for quick custom orders.”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All listed fields are present with appropriate input types (Quantity numeric, Date Required date input).",
+        "Submitting the form shows a clear success state and does not lose entered data unexpectedly.",
+        "The Instagram DM line is visible exactly as provided."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add backend support to persist custom order submissions (store form entries with a timestamp), and expose methods to create a submission and to fetch submissions for basic verification/testing.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "✨ CUSTOM ORDERS PAGE\n\nInclude a form: ..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A backend method exists to create/store a custom order submission including all form fields plus a timestamp.",
+        "A backend query method exists to fetch stored submissions (for testing/verification).",
+        "Frontend form submission calls the backend and handles success/error responses gracefully."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Apply the requested site-wide design style: soft pastel palette (blush pink, beige, cream, light blue), white clean backgrounds, rounded buttons, minimal icons, elegant typography, Instagram-style product grids, mobile-friendly layout, and smooth transitions/animations; ensure the overall look is premium, minimal, soft feminine, not cluttered, and luxury-but-affordable.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🖼 DESIGN STYLE INSTRUCTIONS\n\t•\tSoft pastel palette (blush pink, beige, cream, light blue)\n\t•\tWhite clean background\n\t•\tRounded buttons\n\t•\tMinimal icons\n\t•\tElegant typography\n\t•\tInstagram-style product grid\n\t•\tMobile-friendly layout\n\t•\tSmooth scrolling sections",
+          "IMPORTANT STYLE INSTRUCTION\n\nThe website should feel:\nPremium\nMinimal\nSoft feminine\nNot cluttered\nLuxury but affordable\n\nThe website should feel like a premium international handmade brand similar to a luxury boutique. Clean spacing, elegant typography, smooth animations, and Instagram-friendly layout."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Buttons across the site have rounded styling and consistent hover/focus states.",
+        "Pages use consistent typography and spacing with a soft pastel/cream/white aesthetic (no harsh or cluttered layouts).",
+        "Grids resemble an Instagram-style product grid on desktop and collapse cleanly on mobile.",
+        "Subtle animations/transitions are present (e.g., section fade/slide-in, hover lift on cards) without feeling busy."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Integrate the uploaded logo image (IMG_5343.jpeg) as a static frontend asset and use it in the Home hero and (optionally) in the navigation bar brand area.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Large brand name DESVA and the logo is the image uploaded"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo renders crisply without stretching and maintains aspect ratio.",
+        "Logo is bundled as a static asset served by the frontend (not fetched from the backend)."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Create a coherent visual theme system (colors, type scale, spacing, radii) aligned to the provided pastel/luxury-boutique direction and enforce it consistently across all pages and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Soft pastel palette (blush pink, beige, cream, light blue)",
+          "Premium international handmade brand ... Clean spacing, elegant typography"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A consistent set of design tokens/styles is used site-wide (not ad-hoc styles per page).",
+        "No pages deviate into a different look-and-feel; all sections appear part of the same brand system."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add generated icon assets (favicon + app icons) that visually match the uploaded logo style, and serve them as static assets from the frontend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Large brand name DESVA and the logo is the image uploaded"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Favicon and app icons exist in the frontend public assets and are referenced by the app so the browser tab icon is set.",
+        "Generated assets are stored under frontend/public/assets/generated and are not routed through the backend."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must use React + TypeScript with Tailwind and existing UI components by composition only (do not edit read-only UI component sources).",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Use English for all user-facing text."
+  ],
+  "nonGoals": [
+    "E-commerce checkout, payments, or inventory management.",
+    "User accounts/authentication or admin dashboards for managing orders.",
+    "Third-party integrations beyond a simple outbound Instagram link."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Favicon icon derived from the uploaded logo style (desva-favicon.dim_64x64.png)",
+      "App icon derived from the uploaded logo style (desva-appicon.dim_180x180.png)"
+    ],
+    "edits": []
+  }
+}

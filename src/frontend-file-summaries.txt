@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for all pages (Home, Bouquets, Polaroids, Bookmarks, Customized Cards, Custom Orders) wrapped in a shared SiteLayout component.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Layout wrapper component that provides consistent structure with TopNav header and SiteFooter for all pages.",
+  "frontend/src/components/layout/TopNav.tsx": "Responsive navigation header with DESVA logo, desktop menu links, and mobile hamburger menu for all collection pages and custom orders.",
+  "frontend/src/components/layout/SiteFooter.tsx": "Site footer displaying brand info, Instagram link, contact email, \"Made with Love by DESVA\" text, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/ui/Section.tsx": "Reusable section wrapper components (Section and SectionHeader) providing consistent spacing, animations, and typography for page sections.",
+  "frontend/src/pages/HomePage.tsx": "Home page featuring hero section with DESVA logo and tagline, intro text, featured category cards grid, and \"Why Choose DESVA\" section with smooth animations.",
+  "frontend/src/pages/BouquetCollectionPage.tsx": "Bouquet collection page displaying all four bouquet types (Natural, Artificial, Ribbon, Pipe Cleaner) with exact pricing tiers and customization note.",
+  "frontend/src/pages/PolaroidCollectionPage.tsx": "Polaroid collection page showing three size options (Square ₹9, Rectangle ₹9, Large ₹11) with icons and product description.",
+  "frontend/src/pages/BookmarkCollectionPage.tsx": "Bookmark collection page displaying starting price (₹49), description, and feature cards for different use cases (students, farewell, return gifts).",
+  "frontend/src/pages/CustomizedCardCollectionPage.tsx": "Customized card collection page showing price (₹250), description, and occasion cards for farewell, bridal, birthdays, and special events.",
+  "frontend/src/pages/CustomOrdersPage.tsx": "Custom orders page with comprehensive form (name, product type, event type, quantity, message, date), Instagram DM callout, success state, and backend integration.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend integration including useSubmitCustomOrder mutation and useGetAllCustomOrders query with proper state management.",
+  "frontend/src/index.css": "Global styles with soft pastel OKLCH color palette (rose, pink, cream, beige), custom animations (fade-in, slide-in, zoom-in), and smooth transitions for luxury boutique aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom fonts (Inter, Playfair Display), soft shadows, and design tokens matching the pastel boutique theme.",
+  "frontend/index.html": "HTML entry point with DESVA title, meta description, favicon/app icon references, and Google Fonts preload for Inter and Playfair Display.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge.",
+  "frontend/src/components/Section.tsx": "Reusable section wrapper components (Section and SectionHeader) providing consistent spacing, animations, and typography for page sections across the site."
+}

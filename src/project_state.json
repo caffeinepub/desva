@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website for DESVA (handmade bouquets, polaroids, bookmarks, customized gifts) with a premium/minimal soft-feminine design, product collection pages with pricing, and a custom orders form.",
+  "architectural_notes": [
+    "Site pages: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, Custom Orders.",
+    "Brand/style direction: premium, minimal, soft feminine, luxury-but-affordable; clean spacing, elegant typography, smooth animations; Instagram-friendly product grid; mobile-first.",
+    "Use uploaded logo image in Home hero alongside brand name 'DESVA' and tagline 'personalized With Love'.",
+    "Footer includes Instagram link, contact email, and 'Made with Love by DESVA'.",
+    "Custom Orders includes form plus CTA text: 'DM us on Instagram for quick custom orders.'"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Favicon icon derived from the uploaded logo style (desva-favicon.dim_64x64.png)\n- App icon derived from the uploaded logo style (desva-appicon.dim_180x180.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-site-wide-layout-with-a-top-navigation-and-a-simple-footer-and-add-routes-for-home-bouquet-collection-polaroid-collection-bookmark-collection-customized-card-collection-and-custom-orders",
+      "title": "Create a site-wide layout with a top navigation and a simple footer, and add routes for: Home, Bouquet Collection, Polaroid Collection, Bookmark Collection, Customized Card Collection, and Custom Orders.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-home-page-sections-1-hero-with-large-brand-name-desva-the-uploaded-logo-image-tagline-personalized-with-love-soft-pastel-pink-background-and-two-ctas-shop-now-and-explore-collections-2-short-intro-section-with-the-provided-desva-description-3-featured-categories-preview-cards-for-bouquets-polaroids-bookmarks-customized-cards-4-why-choose-desva-section-with-the-4-bullet-points-include-smooth-scrolling-for-in-page-sections-where-applicable",
+      "title": "Implement the Home page sections: (1) Hero with large brand name “DESVA”, the uploaded logo image, tagline “personalized With Love”, soft pastel pink background, and two CTAs “Shop Now” and “Explore Collections”; (2) Short Intro section with the provided DESVA description; (3) Featured Categories preview cards for Bouquets, Polaroids, Bookmarks, Customized Cards; (4) “Why Choose DESVA” section with the 4 bullet points; include smooth scrolling for in-page sections where applicable.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-bouquet-collection-page-showing-4-bouquet-types-with-the-exact-pricing-tiers-provided-and-include-the-note-customized-pricing-may-vary-based-on-design-complexity-also-include-the-pipe-cleaner-flower-bouquet-pricing-split-into-normal-200-medium-premium-250-customized-premium-starting-300",
+      "title": "Create the Bouquet Collection page showing 4 bouquet types with the exact pricing tiers provided, and include the note: “Customized pricing may vary based on design complexity.” Also include the Pipe Cleaner Flower Bouquet pricing split into: Normal – ₹200, Medium / Premium – ₹250, Customized Premium – Starting ₹300+.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-polaroid-collection-page-with-the-three-sizes-and-prices-square-9-rectangle-9-large-11-and-display-the-provided-short-description",
+      "title": "Create the Polaroid Collection page with the three sizes and prices: Square – ₹9, Rectangle – ₹9, Large – ₹11, and display the provided short description.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-bookmark-collection-page-showing-starting-price-49-and-the-provided-description",
+      "title": "Create the Bookmark Collection page showing Starting Price – ₹49 and the provided description.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-customized-card-collection-page-showing-price-250-and-the-provided-description",
+      "title": "Create the Customized Card Collection page showing Price – ₹250 and the provided description.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-custom-orders-page-with-a-form-containing-these-fields-name-product-type-event-type-quantity-custom-message-date-required-include-the-line-dm-us-on-instagram-for-quick-custom-orders",
+      "title": "Create the Custom Orders page with a form containing these fields: Name, Product Type, Event Type, Quantity, Custom Message, Date Required; include the line “DM us on Instagram for quick custom orders.”",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-requested-site-wide-design-style-soft-pastel-palette-blush-pink-beige-cream-light-blue-white-clean-backgrounds-rounded-buttons-minimal-icons-elegant-typography-instagram-style-product-grids-mobile-friendly-layout-and-smooth-transitions-animations-ensure-the-overall-look-is-premium-minimal-soft-feminine-not-cluttered-and-luxury-but-affordable",
+      "title": "Apply the requested site-wide design style: soft pastel palette (blush pink, beige, cream, light blue), white clean backgrounds, rounded buttons, minimal icons, elegant typography, Instagram-style product grids, mobile-friendly layout, and smooth transitions/animations; ensure the overall look is premium, minimal, soft feminine, not cluttered, and luxury-but-affordable.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-the-uploaded-logo-image-img-5343-jpeg-as-a-static-frontend-asset-and-use-it-in-the-home-hero-and-optionally-in-the-navigation-bar-brand-area",
+      "title": "Integrate the uploaded logo image (IMG_5343.jpeg) as a static frontend asset and use it in the Home hero and (optionally) in the navigation bar brand area.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-coherent-visual-theme-system-colors-type-scale-spacing-radii-aligned-to-the-provided-pastel-luxury-boutique-direction-and-enforce-it-consistently-across-all-pages-and-components",
+      "title": "Create a coherent visual theme system (colors, type scale, spacing, radii) aligned to the provided pastel/luxury-boutique direction and enforce it consistently across all pages and components.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-icon-assets-favicon-app-icons-that-visually-match-the-uploaded-logo-style-and-serve-them-as-static-assets-from-the-frontend",
+      "title": "Add generated icon assets (favicon + app icons) that visually match the uploaded logo style, and serve them as static assets from the frontend.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create DESVA Home page with hero (logo image, tagline, CTA buttons), intro, featured categories, Why Choose section, and footer links",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create Bouquet Collection page with 4 bouquet types and pricing tiers + customized pricing note",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create Polaroid Collection page with sizes/pricing and short description",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create Bookmark Collection page with starting price and description",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create Customized Card Collection page with price and description",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create Custom Orders page with form fields (Name, Product Type, Event Type, Quantity, Custom Message, Date Required) and Instagram DM note",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Apply site-wide design system: soft pastel palette, clean white backgrounds, rounded buttons, minimal icons, elegant typography, Instagram-style product grid, mobile-friendly, smooth scrolling/animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add backend support to persist custom order submissions (store form entries with a timestamp), and expose methods to create a submission and to fetch submissions for basic verification/testing.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "DESVA",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

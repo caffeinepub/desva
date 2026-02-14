@@ -1,0 +1,77 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T12:33:14.278Z",
+  "summary": "Most core pages/routes and a shared layout were added, along with a Motoko backend actor and frontend hooks for submitting/fetching custom orders. However, several requirements cannot be confirmed or appear not to match the spec exactly (notably exact text formatting for prices/descriptions and required generated icon assets). The diff also introduces unrequested Internet Identity/auth scaffolding and an extra caffeine.ai attribution link in the footer.",
+  "missing_requirements": [
+    {
+      "id": "REQ-5",
+      "requirement": "Bookmark Collection page must render the starting price exactly as “Starting Price – ₹49” and the provided description exactly as provided.",
+      "reason": "The page shows “Starting Price” as a title and “₹49” in a separate badge, not the exact combined string “Starting Price – ₹49”. The description text present cannot be verified to match the exact provided description.",
+      "evidence": [
+        "frontend/src/pages/BookmarkCollectionPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Customized Card Collection page must render the price exactly as “Price – ₹250” and the provided description exactly as provided.",
+      "reason": "The page shows “Price” as a title and “₹250” in a separate badge, not the exact combined string “Price – ₹250”. The description text present cannot be verified to match the exact provided description.",
+      "evidence": [
+        "frontend/src/pages/CustomizedCardCollectionPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Add generated icon assets (favicon + app icons) under frontend/public/assets/generated and reference them so the browser tab icon is set.",
+      "reason": "No generated icon image files under frontend/public/assets/generated are shown in the diff summary. While the file summary mentions icon references in frontend/index.html, the required generated assets themselves are not evidenced in the provided diff summary.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication scaffolding (provider/hooks) added, implying user login/auth support.",
+      "reason": "User accounts/authentication were explicitly listed as a non-goal; the diff adds Internet Identity integration and identity-based actor creation logic.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Footer includes an unrequested caffeine.ai attribution/UTM link (“Built with … using caffeine.ai”).",
+      "reason": "REQ-1 only requested an Instagram link, contact email text, and the line “Made with Love by DESVA” in the footer; the caffeine.ai promotional link is additional functionality/content not requested.",
+      "evidence": [
+        "frontend/src/components/layout/SiteFooter.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.64,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Section.tsx",
+    "frontend/src/components/layout/SiteFooter.tsx",
+    "frontend/src/components/layout/SiteLayout.tsx",
+    "frontend/src/components/layout/TopNav.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/utils.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/BookmarkCollectionPage.tsx",
+    "frontend/src/pages/BouquetCollectionPage.tsx",
+    "frontend/src/pages/CustomOrdersPage.tsx",
+    "frontend/src/pages/CustomizedCardCollectionPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PolaroidCollectionPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
