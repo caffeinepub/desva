@@ -1,29 +1,62 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T15:41:50.727Z",
+  "generatedAt": "2026-02-14T14:11:35.437Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 5,
-    "implemented": 5,
+    "total": 10,
+    "implemented": 9,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the Bouquet Collection page to present a single main section titled “Bouquet Collection” containing exactly 6 product cards in a clean, premium grid layout (6 items total), each showing: product image, product name, short description, and pricing details, matching the user-provided bouquet types and copy.",
+        "summary": "Add the uploaded product images as frontend static assets and map them to the correct catalog items in the same order provided (1st through 11th image for the first 11 catalog items; all images after the 11th for the Cute Accessories section).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/public/assets/IMG_6931.jpeg",
+          "frontend/public/assets/IMG_6932.jpeg",
+          "frontend/public/assets/IMG_6934.jpeg",
+          "frontend/public/assets/IMG_6952.jpeg",
+          "frontend/public/assets/IMG_6958.jpeg",
+          "frontend/public/assets/IMG_6960.jpeg",
+          "frontend/public/assets/IMG_6962.jpeg",
+          "frontend/public/assets/IMG_6963.jpeg",
+          "frontend/public/assets/IMG_6964.jpeg",
+          "frontend/public/assets/IMG_6965.jpeg",
+          "frontend/public/assets/IMG_6967.jpeg",
+          "frontend/public/assets/IMG_6935.jpeg",
+          "frontend/public/assets/IMG_6957.jpeg",
+          "frontend/public/assets/IMG_6432.jpeg",
+          "frontend/public/assets/IMG_6966.jpeg",
+          "frontend/public/assets/IMG_6427.jpeg",
+          "frontend/public/assets/IMG_6961.jpeg",
+          "frontend/public/assets/IMG_6433.jpeg",
+          "frontend/public/assets/IMG_6424.jpeg",
+          "frontend/public/assets/IMG_6426.jpeg",
+          "frontend/public/assets/IMG_6933.jpeg",
+          "frontend/public/assets/IMG_6930.jpeg",
+          "frontend/src/lib/catalogImageMap.ts"
         ],
         "matchedFiles": [
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/src/lib/catalogImageMap.ts"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Add a Contact section on the site that displays Instagram \"@_the.desva_\" and email \"thedesvaofficial@gmail.com\", and includes a button labeled \"DM Us on Instagram\" that links to https://instagram.com/_the.desva_ in a new tab.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx"
         ]
       },
       {
         "id": "REQ-2",
-        "summary": "Ensure bouquet card content matches the provided descriptions and pricing exactly:\n- Ribbon Flower Bouquet: Description “Handmade ribbon flower bouquet with elegant wrapping.” Pricing tiers: Normal ₹89, Premium ₹119\n- Artificial Flower Bouquet: Description “Long-lasting artificial flower bouquet with premium finish.” Pricing tiers: Normal ₹89, Premium ₹119\n- Natural Flower Bouquet: Description “Fresh natural flower bouquet arranged beautifully.” Pricing tiers: Normal ₹89, Premium ₹119\n- Pipe Cleaner Flower Bouquet: Pricing tiers: Normal ₹200, Premium ₹250, Customized Premium ₹300+ and include note: “Final price depends on customization.”\n- Polaroid Bouquet: Description “Creative bouquet designed using polaroid photo memories.” Pricing: Starting from ₹350\n- Customized Bouquet: Description “Fully customized bouquet designed according to theme and customer preferences.” Pricing: Starting from ₹550",
+        "summary": "Update the Bouquet Collection page to match the requested pricing labels and values: Ribbon Flower Bouquet (Normal ₹89, Premium ₹119), Artificial Flower Bouquet (Normal ₹89, Premium ₹119), Natural Flower Bouquet (Normal ₹89, Premium ₹119), and Pipe Cleaner Flower Bouquet (Normal ₹199, Premium ₹249, Customized Premium ₹299+), and display the note: \"Final pricing depends on customization.\"",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/pages/BouquetCollectionPage.tsx"
@@ -34,72 +67,156 @@
       },
       {
         "id": "REQ-3",
-        "summary": "Implement the Bouquet Collection grid as a responsive, equal-spacing layout with a luxury boutique feel on a soft white / beige aesthetic background. The grid must be mobile responsive and use elegant typography consistent with a premium catalog.",
+        "summary": "Add a new section/page titled \"Frames & Memory Keepsakes\" that includes: Polaroid Prints pricing (Square ₹9, Rectangle ₹9, Large ₹11) with the 7th uploaded image; Polaroid Book pricing (8 Photos ₹99, 16 Photos ₹199) with the 8th uploaded image and description \"Compact memory book printed in premium quality.\"; Magazine Style Memory Album pricing (4 Pages ₹499, 8 Pages ₹599) with the 9th uploaded image and description \"Customized magazine-style photo album with elegant layout.\"; and include the mapped product images in an Instagram-style grid layout.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/src/pages/FramesMemoryKeepsakesPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/TopNav.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/src/pages/FramesMemoryKeepsakesPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/TopNav.tsx"
         ]
       },
       {
         "id": "REQ-4",
-        "summary": "Add the 6 uploaded bouquet images as static frontend assets and update frontend image mappings so the Bouquet Collection cards use the assigned images in order (1st–6th) with the provided filenames: IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg.",
+        "summary": "Update/extend the Polaroids area to include two bouquet products with their mapped images and descriptions: \"Polaroid Bouquet\" (Starting from ₹349; description \"Creative bouquet made using polaroid memories.\") using the 5th uploaded image, and \"Customized Polaroid Bouquet\" (Starting from ₹549; description \"Fully customized polaroid bouquet tailored to theme and memory selection.\") using the 6th uploaded image.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/IMG_6954.jpeg",
-          "frontend/public/assets/IMG_6959.jpeg",
-          "frontend/public/assets/IMG_6960-5.jpeg",
-          "frontend/public/assets/IMG_6958-5.jpeg",
-          "frontend/public/assets/IMG_6967-5.jpeg",
-          "frontend/public/assets/IMG_6966-5.jpeg",
-          "frontend/src/lib/catalogImageMap.ts"
+          "frontend/src/pages/PolaroidCollectionPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/lib/catalogImageMap.ts"
+          "frontend/src/pages/PolaroidCollectionPage.tsx"
         ]
       },
       {
         "id": "REQ-5",
-        "summary": "Generate and use premium-edited versions of all 6 bouquet images that preserve original product colors/design while replacing the background with soft white or beige, adding a subtle shadow, maintaining high resolution, and centering the product. Store generated images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
+        "summary": "Update the Bookmarks page to ensure it uses the 10th uploaded image and shows \"Starting from ₹49\" plus the provided description text in English.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png",
-          "frontend/src/lib/catalogImageMap.ts",
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/src/pages/BookmarkCollectionPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png",
-          "frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png",
-          "frontend/src/lib/catalogImageMap.ts",
-          "frontend/src/pages/BouquetCollectionPage.tsx"
+          "frontend/src/pages/BookmarkCollectionPage.tsx"
         ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Update the Customized Cards page to ensure it uses the 11th uploaded image and shows \"Starting from ₹249\" plus the provided description text in English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/CustomizedCardCollectionPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/CustomizedCardCollectionPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Create a \"Handcrafted Cute Essentials\" section/page that displays all images uploaded after the 11th image in an Instagram-style product grid, and apply the provided image presentation rules (soft white aesthetic background, subtle shadow, centered, high-resolution, keep original product color/quality, luxury boutique product photography style).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/IMG_6935_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6957_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6432_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6966_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6427_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6961_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6433_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6424_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6426_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6933_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6930_softwhite.dim_1600x1600.png",
+          "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/lib/catalogImageMap.ts"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/IMG_6935_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6957_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6432_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6966_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6427_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6961_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6433_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6424_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6426_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6933_softwhite.dim_1600x1600.png",
+          "frontend/public/assets/generated/IMG_6930_softwhite.dim_1600x1600.png",
+          "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/lib/catalogImageMap.ts"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Enhance the \"Shop Now\" order submission system (currently Custom Orders) so customers can: select product, choose category, select quantity, add customization details, upload images (if required), enter name, phone number, email, and enter delivery date; and submit via a \"Submit Order\" button. Keep all user-facing text in English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/CustomOrdersPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/CustomOrdersPage.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Update the backend CustomOrder data model and submission API to store the new order fields (product, category, phone number, email, customization details, and uploaded image references/data as applicable), while preserving existing order retrieval functionality (sorted by timestamp).",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
       }
     ]
   },
   "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "backend/migration.mo",
     "build-request.json",
+    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png",
-    "frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png",
-    "frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png",
-    "frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png",
-    "frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png",
-    "frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6424_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6426_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6427_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6432_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6433_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6930_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6933_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6935_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6957_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6961_softwhite.dim_1600x1600.png",
+    "frontend/public/assets/generated/IMG_6966_softwhite.dim_1600x1600.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/layout/TopNav.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useQueries.ts",
     "frontend/src/lib/catalogImageMap.ts",
+    "frontend/src/pages/BookmarkCollectionPage.tsx",
     "frontend/src/pages/BouquetCollectionPage.tsx",
+    "frontend/src/pages/CustomOrdersPage.tsx",
+    "frontend/src/pages/CustomizedCardCollectionPage.tsx",
+    "frontend/src/pages/FramesMemoryKeepsakesPage.tsx",
+    "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PolaroidCollectionPage.tsx",
+    "frontend/src/utils/urlParams.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

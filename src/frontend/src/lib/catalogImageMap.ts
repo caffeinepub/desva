@@ -3,34 +3,32 @@
  * Maps uploaded images to product catalog items and Cute Essentials
  */
 
-// Bouquet Collection Images (1-6) - Using generated soft white background versions
+// Bouquet Collection Images (1-4)
 export const bouquetImages = {
-  ribbon: '/assets/generated/IMG_6954_softwhite.dim_1600x1600.png',           // 1st - Ribbon bouquet
-  artificial: '/assets/generated/IMG_6959_softwhite.dim_1600x1600.png',       // 2nd - Artificial bouquet
-  natural: '/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png',        // 3rd - Natural flower
-  pipeCleaner: '/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png',    // 4th - Pipe cleaner bouquet
-  polaroid: '/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png',       // 5th - Polaroid bouquet
-  customized: '/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png',     // 6th - Customized bouquet
+  ribbon: '/assets/IMG_6960.jpeg',           // 1st upload
+  artificial: '/assets/IMG_6952.jpeg',       // 2nd upload
+  natural: '/assets/IMG_6934.jpeg',          // 3rd upload
+  pipeCleaner: '/assets/IMG_6967.jpeg',      // 4th upload
 };
 
 // Polaroid Bouquet Images (5-6)
 export const polaroidBouquetImages = {
-  standard: '/assets/IMG_6967-1.jpeg',         // 5th upload - Polaroid bouquet
-  customized: '/assets/IMG_6967-1.jpeg',       // 6th upload - Custom bucket (using same for now)
+  standard: '/assets/IMG_6931.jpeg',         // 5th upload
+  customized: '/assets/IMG_6965.jpeg',       // 6th upload
 };
 
 // Frames & Memory Keepsakes Images (7-9)
 export const framesMemoryImages = {
-  polaroidPrints: '/assets/IMG_6967-1.jpeg',   // 7th upload - Poo🌷 (reusing polaroid bouquet)
-  polaroidBook: '/assets/IMG_6966-1.jpeg',     // 8th upload - Polaroid book
-  magazineAlbum: '/assets/IMG_6963-1.jpeg',    // 9th upload - Magazines
+  polaroidPrints: '/assets/IMG_6958.jpeg',   // 7th upload
+  polaroidBook: '/assets/IMG_6932.jpeg',     // 8th upload
+  magazineAlbum: '/assets/IMG_6962.jpeg',    // 9th upload
 };
 
 // Bookmarks Image (10)
-export const bookmarksImage = '/assets/IMG_6962-1.jpeg';  // 10th upload - Bookmarks
+export const bookmarksImage = '/assets/IMG_6964.jpeg';  // 10th upload
 
 // Customized Cards Image (11)
-export const customizedCardsImage = '/assets/IMG_6961-1.jpeg';  // 11th upload - Cards
+export const customizedCardsImage = '/assets/IMG_6965.jpeg';  // 11th upload (reused from polaroid)
 
 // Cute Essentials Images (12-22) - Edited versions with soft white background
 export const cuteEssentialsImages = [
@@ -48,7 +46,7 @@ export const cuteEssentialsImages = [
 ];
 
 // Helper function to get bouquet image by type
-export function getBouquetImage(type: 'ribbon' | 'artificial' | 'natural' | 'pipeCleaner' | 'polaroid' | 'customized'): string {
+export function getBouquetImage(type: 'ribbon' | 'artificial' | 'natural' | 'pipeCleaner'): string {
   return bouquetImages[type];
 }
 

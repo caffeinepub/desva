@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-bouquet-collection-page-to-present-a-single-main-section-titled-bouquet-collection-containing-exactly-6-product-cards-in-a-clean-premium-grid-layout-6-items-total-each-showing-product-image-product-name-short-description-and-pricing-details-matching-the-user-provided-bouquet-types-and-copy",
-      "featureTitle": "Update the Bouquet Collection page to present a single main section titled “Bouquet Collection” containing exactly 6 product cards in a clean, premium grid layout (6 items total), each showing: product image, product name, short description, and pricing details, matching the user-provided bouquet types and copy.",
+      "featureId": "feature-add-the-uploaded-product-images-as-frontend-static-assets-and-map-them-to-the-correct-catalog-items-in-the-same-order-provided-1st-through-11th-image-for-the-first-11-catalog-items-all-images-after-the-11th-for-the-cute-accessories-section",
+      "featureTitle": "Add the uploaded product images as frontend static assets and map them to the correct catalog items in the same order provided (1st through 11th image for the first 11 catalog items; all images after the 11th for the Cute Accessories section).",
       "files": [
-        "frontend/src/pages/BouquetCollectionPage.tsx"
+        "frontend/src/lib/catalogImageMap.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -22,8 +22,8 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-bouquet-card-content-matches-the-provided-descriptions-and-pricing-exactly-ribbon-flower-bouquet-description-handmade-ribbon-flower-bouquet-with-elegant-wrapping-pricing-tiers-normal-89-premium-119-artificial-flower-bouquet-description-long-lasting-artificial-flower-bouquet-with-premium-finish-pricing-tiers-normal-89-premium-119-natural-flower-bouquet-description-fresh-natural-flower-bouquet-arranged-beautifully-pricing-tiers-normal-89-premium-119-pipe-cleaner-flower-bouquet-pricing-tiers-normal-200-premium-250-customized-premium-300-and-include-note-final-price-depends-on-customization-polaroid-bouquet-description-creative-bouquet-designed-using-polaroid-photo-memories-pricing-starting-from-350-customized-bouquet-description-fully-customized-bouquet-designed-according-to-theme-and-customer-preferences-pricing-starting-from-550",
-      "featureTitle": "Ensure bouquet card content matches the provided descriptions and pricing exactly:\n- Ribbon Flower Bouquet: Description “Handmade ribbon flower bouquet with elegant wrapping.” Pricing tiers: Normal ₹89, Premium ₹119\n- Artificial Flower Bouquet: Description “Long-lasting artificial flower bouquet with premium finish.” Pricing tiers: Normal ₹89, Premium ₹119\n- Natural Flower Bouquet: Description “Fresh natural flower bouquet arranged beautifully.” Pricing tiers: Normal ₹89, Premium ₹119\n- Pipe Cleaner Flower Bouquet: Pricing tiers: Normal ₹200, Premium ₹250, Customized Premium ₹300+ and include note: “Final price depends on customization.”\n- Polaroid Bouquet: Description “Creative bouquet designed using polaroid photo memories.” Pricing: Starting from ₹350\n- Customized Bouquet: Description “Fully customized bouquet designed according to theme and customer preferences.” Pricing: Starting from ₹550",
+      "featureId": "feature-update-the-bouquet-collection-page-to-match-the-requested-pricing-labels-and-values-ribbon-flower-bouquet-normal-89-premium-119-artificial-flower-bouquet-normal-89-premium-119-natural-flower-bouquet-normal-89-premium-119-and-pipe-cleaner-flower-bouquet-normal-199-premium-249-customized-premium-299-and-display-the-note-final-pricing-depends-on-customization",
+      "featureTitle": "Update the Bouquet Collection page to match the requested pricing labels and values: Ribbon Flower Bouquet (Normal ₹89, Premium ₹119), Artificial Flower Bouquet (Normal ₹89, Premium ₹119), Natural Flower Bouquet (Normal ₹89, Premium ₹119), and Pipe Cleaner Flower Bouquet (Normal ₹199, Premium ₹249, Customized Premium ₹299+), and display the note: \"Final pricing depends on customization.\"",
       "files": [
         "frontend/src/pages/BouquetCollectionPage.tsx"
       ],
@@ -42,10 +42,12 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-the-bouquet-collection-grid-as-a-responsive-equal-spacing-layout-with-a-luxury-boutique-feel-on-a-soft-white-beige-aesthetic-background-the-grid-must-be-mobile-responsive-and-use-elegant-typography-consistent-with-a-premium-catalog",
-      "featureTitle": "Implement the Bouquet Collection grid as a responsive, equal-spacing layout with a luxury boutique feel on a soft white / beige aesthetic background. The grid must be mobile responsive and use elegant typography consistent with a premium catalog.",
+      "featureId": "feature-add-a-new-section-page-titled-frames-memory-keepsakes-that-includes-polaroid-prints-pricing-square-9-rectangle-9-large-11-with-the-7th-uploaded-image-polaroid-book-pricing-8-photos-99-16-photos-199-with-the-8th-uploaded-image-and-description-compact-memory-book-printed-in-premium-quality-magazine-style-memory-album-pricing-4-pages-499-8-pages-599-with-the-9th-uploaded-image-and-description-customized-magazine-style-photo-album-with-elegant-layout-and-include-the-mapped-product-images-in-an-instagram-style-grid-layout",
+      "featureTitle": "Add a new section/page titled \"Frames & Memory Keepsakes\" that includes: Polaroid Prints pricing (Square ₹9, Rectangle ₹9, Large ₹11) with the 7th uploaded image; Polaroid Book pricing (8 Photos ₹99, 16 Photos ₹199) with the 8th uploaded image and description \"Compact memory book printed in premium quality.\"; Magazine Style Memory Album pricing (4 Pages ₹499, 8 Pages ₹599) with the 9th uploaded image and description \"Customized magazine-style photo album with elegant layout.\"; and include the mapped product images in an Instagram-style grid layout.",
       "files": [
-        "frontend/src/pages/BouquetCollectionPage.tsx"
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/pages/FramesMemoryKeepsakesPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -62,10 +64,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-the-6-uploaded-bouquet-images-as-static-frontend-assets-and-update-frontend-image-mappings-so-the-bouquet-collection-cards-use-the-assigned-images-in-order-1st-6th-with-the-provided-filenames-img-6954-jpeg-img-6959-jpeg-img-6960-5-jpeg-img-6958-5-jpeg-img-6967-5-jpeg-img-6966-5-jpeg",
-      "featureTitle": "Add the 6 uploaded bouquet images as static frontend assets and update frontend image mappings so the Bouquet Collection cards use the assigned images in order (1st–6th) with the provided filenames: IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg.",
+      "featureId": "feature-update-extend-the-polaroids-area-to-include-two-bouquet-products-with-their-mapped-images-and-descriptions-polaroid-bouquet-starting-from-349-description-creative-bouquet-made-using-polaroid-memories-using-the-5th-uploaded-image-and-customized-polaroid-bouquet-starting-from-549-description-fully-customized-polaroid-bouquet-tailored-to-theme-and-memory-selection-using-the-6th-uploaded-image",
+      "featureTitle": "Update/extend the Polaroids area to include two bouquet products with their mapped images and descriptions: \"Polaroid Bouquet\" (Starting from ₹349; description \"Creative bouquet made using polaroid memories.\") using the 5th uploaded image, and \"Customized Polaroid Bouquet\" (Starting from ₹549; description \"Fully customized polaroid bouquet tailored to theme and memory selection.\") using the 6th uploaded image.",
       "files": [
-        "frontend/src/lib/catalogImageMap.ts"
+        "frontend/src/pages/PolaroidCollectionPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -82,11 +84,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-generate-and-use-premium-edited-versions-of-all-6-bouquet-images-that-preserve-original-product-colors-design-while-replacing-the-background-with-soft-white-or-beige-adding-a-subtle-shadow-maintaining-high-resolution-and-centering-the-product-store-generated-images-in-frontend-public-assets-generated-and-ensure-the-bouquet-collection-uses-these-generated-images",
-      "featureTitle": "Generate and use premium-edited versions of all 6 bouquet images that preserve original product colors/design while replacing the background with soft white or beige, adding a subtle shadow, maintaining high resolution, and centering the product. Store generated images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
+      "featureId": "feature-update-the-bookmarks-page-to-ensure-it-uses-the-10th-uploaded-image-and-shows-starting-from-49-plus-the-provided-description-text-in-english",
+      "featureTitle": "Update the Bookmarks page to ensure it uses the 10th uploaded image and shows \"Starting from ₹49\" plus the provided description text in English.",
       "files": [
-        "frontend/src/lib/catalogImageMap.ts",
-        "frontend/src/pages/BouquetCollectionPage.tsx"
+        "frontend/src/pages/BookmarkCollectionPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -99,6 +100,91 @@
       ],
       "testIds": [
         "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-customized-cards-page-to-ensure-it-uses-the-11th-uploaded-image-and-shows-starting-from-249-plus-the-provided-description-text-in-english",
+      "featureTitle": "Update the Customized Cards page to ensure it uses the 11th uploaded image and shows \"Starting from ₹249\" plus the provided description text in English.",
+      "files": [
+        "frontend/src/pages/CustomizedCardCollectionPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-handcrafted-cute-essentials-section-page-that-displays-all-images-uploaded-after-the-11th-image-in-an-instagram-style-product-grid-and-apply-the-provided-image-presentation-rules-soft-white-aesthetic-background-subtle-shadow-centered-high-resolution-keep-original-product-color-quality-luxury-boutique-product-photography-style",
+      "featureTitle": "Create a \"Handcrafted Cute Essentials\" section/page that displays all images uploaded after the 11th image in an Instagram-style product grid, and apply the provided image presentation rules (soft white aesthetic background, subtle shadow, centered, high-resolution, keep original product color/quality, luxury boutique product photography style).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/lib/catalogImageMap.ts",
+        "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enhance-the-shop-now-order-submission-system-currently-custom-orders-so-customers-can-select-product-choose-category-select-quantity-add-customization-details-upload-images-if-required-enter-name-phone-number-email-and-enter-delivery-date-and-submit-via-a-submit-order-button-keep-all-user-facing-text-in-english",
+      "featureTitle": "Enhance the \"Shop Now\" order submission system (currently Custom Orders) so customers can: select product, choose category, select quantity, add customization details, upload images (if required), enter name, phone number, email, and enter delivery date; and submit via a \"Submit Order\" button. Keep all user-facing text in English.",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/CustomOrdersPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-contact-section-on-the-site-that-displays-instagram-the-desva-and-email-thedesvaofficial-gmail-com-and-includes-a-button-labeled-dm-us-on-instagram-that-links-to-https-instagram-com-the-desva-in-a-new-tab",
+      "featureTitle": "Add a Contact section on the site that displays Instagram \"@_the.desva_\" and email \"thedesvaofficial@gmail.com\", and includes a button labeled \"DM Us on Instagram\" that links to https://instagram.com/_the.desva_ in a new tab.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
       ],
       "confidence": "high"
     }

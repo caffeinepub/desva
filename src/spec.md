@@ -1,13 +1,18 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Bouquet Collection page to display exactly 6 bouquet products in a premium, responsive grid with the specified copy, pricing, and soft-white edited images.
+**Goal:** Add a DESVA product catalog experience using the uploaded images, introduce new product pages/sections (Cute Essentials and Frames & Memory Keepsakes), and upgrade the Shop Now order form to capture full order details without sending email.
 
 **Planned changes:**
-- Update `/bouquets` to render one main section titled “Bouquet Collection” containing exactly 6 product cards.
-- Implement a clean, luxury boutique grid layout with equal spacing, elegant typography, and a soft white/beige aesthetic background; ensure responsive behavior across breakpoints.
-- Set each bouquet card’s content (name, short description, and pricing) to match the provided text exactly, including the Pipe Cleaner note: “Final price depends on customization.”
-- Add the 6 uploaded bouquet images as static frontend assets and map them to products in the specified order: (1) Ribbon (IMG_6954.jpeg), (2) Artificial (IMG_6959.jpeg), (3) Natural (IMG_6960-5.jpeg), (4) Pipe Cleaner (IMG_6958-5.jpeg), (5) Polaroid (IMG_6967-5.jpeg), (6) Customized (IMG_6966-5.jpeg).
-- Generate premium-edited versions of all 6 images (soft white/beige background, subtle shadow, centered product, preserve original colors/design) and use these generated images in the Bouquet Collection cards; store them under `frontend/public/assets/generated`.
+- Add all 22 uploaded images as frontend static assets and map them in the requested order: first 11 images to the first 11 catalog items; all remaining images to the Cute Accessories/Cute Essentials grid.
+- Update the Bouquet Collection page with the requested tier labels/prices and add the note “Final pricing depends on customization.”
+- Add/extend the Polaroids area with two bouquet products: “Polaroid Bouquet” and “Customized Polaroid Bouquet” (with specified pricing text, descriptions, and mapped images).
+- Create a new page/section: “Frames & Memory Keepsakes” with three listed items, exact pricing, requested descriptions, and an Instagram-style grid layout; ensure it’s reachable from site navigation.
+- Update the Bookmarks page to use the 10th uploaded image and show “Starting from ₹49” plus the provided English description.
+- Update the Customized Cards page to use the 11th uploaded image and show “Starting from ₹249” plus the provided English description.
+- Create a “Handcrafted Cute Essentials” page/section that shows all images after the 11th upload in a clean Instagram-style grid, using processed versions of those images (soft white background, subtle shadow, centered, high-res).
+- Enhance “Shop Now” (Custom Orders) with fields for product, category, quantity, customization details, image upload(s), name, phone number, email, and delivery date, plus a “Submit Order” button; keep all UI text in English and do not send email.
+- Update the backend CustomOrder model and submission API to persist the new order fields (including uploaded image data/references), while keeping existing order retrieval sorted by timestamp (newest first).
+- Add a visible Contact section showing Instagram “@_the.desva_” and email “thedesvaofficial@gmail.com”, with a “DM Us on Instagram” button opening https://instagram.com/_the.desva_ in a new tab.
 
-**User-visible outcome:** Visiting `/bouquets` shows a single “Bouquet Collection” section with 6 premium-looking bouquet cards, each with the correct image, description, and pricing, displayed in a responsive luxury grid.
+**User-visible outcome:** Visitors can browse DESVA’s catalog with the correct uploaded images (including Cute Essentials and Frames & Memory Keepsakes), view updated bouquet pricing, place richer Shop Now orders (saved in the backend, no email sent), and contact DESVA via Instagram or email from a dedicated Contact section.

@@ -1,150 +1,348 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Bouquet Collection: 6-card luxury grid with updated pricing, descriptions, and premium soft-white images",
+  "title": "DESVA catalog images, new collections pages, cute essentials grid, and enhanced Shop Now order form",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Refactor /bouquets to a single “Bouquet Collection” section that renders exactly 6 premium product cards, each with image, name, short description, and pricing details.",
+      "summary": "Add uploaded product images as static assets and map them by upload order to catalog items and Cute Accessories.",
       "acceptanceCriteria": [
-        "/bouquets renders one Bouquet Collection section containing 6 product cards for: Ribbon Flower Bouquet, Artificial Flower Bouquet, Natural Flower Bouquet, Pipe Cleaner Flower Bouquet, Polaroid Bouquet, Customized Bouquet.",
-        "Each card displays: image, name, short description, and pricing details (tiers or starting price as specified).",
-        "Text and pricing match the user prompt exactly (including the Pipe Cleaner note text)."
+        "All 22 uploaded images are available as static assets under the frontend public assets path and load correctly in the browser.",
+        "Each of the first 11 catalog items renders with its specified mapped image.",
+        "All images after the 11th are displayed in the Cute Accessories section/grid."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/BouquetCollectionPage.tsx",
-          "operation": "modify",
-          "description": "Replace the current split layout (3-card grid + separate Pipe Cleaner feature card) with a single main Section titled “Bouquet Collection” that contains a responsive grid rendering exactly 6 cards. Each card must show the assigned image, bouquet name, the exact short description for that bouquet, and the correct pricing details (tier list or “Starting from” line as required). Use shadcn-ui Card/Badge (and any existing UI primitives already imported) to keep a clean, premium card presentation. Verify the component's usage instructions before implementing."
+          "path": "frontend/public/assets/IMG_6931.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6932.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6934.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6952.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6958.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6960.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6962.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6963.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6964.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6965.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6967.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for catalog mapping (upload index mapping will reference this file)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6935.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6957.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6432.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6966.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6427.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6961.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6433.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6424.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6426.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6933.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/public/assets/IMG_6930.jpeg",
+          "operation": "create",
+          "description": "Add uploaded image as a public static asset for the Cute Accessories set (images after the 11th)."
+        },
+        {
+          "path": "frontend/src/lib/catalogImageMap.ts",
+          "operation": "create",
+          "description": "Create a single source of truth that maps uploaded-image index (1..22) to the exact public asset file paths and exposes named helpers for: bouquet images, polaroid bouquet images, polaroid print/book/album images, bookmarks, customized cards, and Cute Essentials grid."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Update bouquet product copy so all 6 cards match the provided descriptions and pricing exactly, including the Pipe Cleaner customization note.",
+      "summary": "Update Bouquet Collection pricing labels/values, add final pricing note, and show mapped images per bouquet type.",
       "acceptanceCriteria": [
-        "Prices displayed on the Bouquet Collection page match the prompt exactly (including ₹200/₹250/₹300+ for Pipe Cleaner, and Starting from ₹350/₹550 for Polaroid/Customized).",
-        "The Pipe Cleaner card includes the note text exactly: “Final price depends on customization.”",
-        "Each bouquet card includes its specific short description (not generic placeholder text like “Choose your preferred tier”)."
+        "Bouquet tier labels show \"Normal\" and \"Premium\" (not \"Basic\").",
+        "Pipe Cleaner bouquet prices show ₹199 / ₹249 / ₹299+ and the exact note text appears on the page.",
+        "Bouquet Collection page includes the correct mapped images for each bouquet type."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/BouquetCollectionPage.tsx",
           "operation": "modify",
-          "description": "Update the data rendered by the 6 bouquet cards to match the prompt exactly: (1) Ribbon: desc “Handmade ribbon flower bouquet with elegant wrapping.” tiers Normal ₹89, Premium ₹119; (2) Artificial: desc “Long-lasting artificial flower bouquet with premium finish.” tiers Normal ₹89, Premium ₹119; (3) Natural: desc “Fresh natural flower bouquet arranged beautifully.” tiers Normal ₹89, Premium ₹119; (4) Pipe Cleaner: tiers Normal ₹200, Premium ₹250, Customized Premium ₹300+ plus note text exactly “Final price depends on customization.”; (5) Polaroid: desc “Creative bouquet designed using polaroid photo memories.” pricing “Starting from ₹350”; (6) Customized: desc “Fully customized bouquet designed according to theme and customer preferences.” pricing “Starting from ₹550”. Ensure no placeholder descriptions remain. Verify the component's usage instructions before implementing."
+          "description": "Update bouquet tier labels to \"Normal\"/\"Premium\" with requested prices; update Pipe Cleaner tiers to ₹199 / ₹249 / ₹299+; replace the pricing note text with exactly \"Final pricing depends on customization.\"; add mapped product images to each bouquet card using the shared mapping from frontend/src/lib/catalogImageMap.ts."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Apply a responsive, equal-spacing luxury grid style on a soft white/beige background with elegant, premium typography.",
+      "summary": "Add a new \"Frames & Memory Keepsakes\" page with requested items, pricing/descriptions, mapped images, and an Instagram-style grid.",
       "acceptanceCriteria": [
-        "Bouquet Collection section background is soft white/beige (not a colorful gradient).",
-        "Grid is responsive (1 column on small screens; increases with breakpoints) and maintains equal spacing between cards.",
-        "Card styling reads as premium (clean borders/shadows, consistent spacing/typography)."
+        "A \"Frames & Memory Keepsakes\" page/section exists and is reachable from site navigation.",
+        "All listed items show the exact pricing and descriptions requested.",
+        "Each item displays the correct mapped uploaded image (7th/8th/9th).",
+        "Layout is a clean, minimal, Instagram-style product grid consistent with the existing pastel theme."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/BouquetCollectionPage.tsx",
+          "path": "frontend/src/pages/FramesMemoryKeepsakesPage.tsx",
+          "operation": "create",
+          "description": "Create the \"Frames & Memory Keepsakes\" page implementing: Polaroid Prints pricing (Square ₹9, Rectangle ₹9, Large ₹11) with the mapped 7th image; Polaroid Book pricing (8 Photos ₹99, 16 Photos ₹199) with the mapped 8th image and description \"Compact memory book printed in premium quality.\"; Magazine Style Memory Album pricing (4 Pages ₹499, 8 Pages ₹599) with the mapped 9th image and description \"Customized magazine-style photo album with elegant layout.\" Use a minimal Instagram-style grid and pull image paths from frontend/src/lib/catalogImageMap.ts. Use existing shadcn-ui composition (e.g., Card/Badge) without editing files under frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Adjust Bouquet Collection section styling to use a soft white/beige aesthetic (e.g., leveraging existing theme tokens like background/secondary/muted) and remove any colorful gradients. Ensure the grid is responsive (1 column on small screens, scaling up across breakpoints) with consistent gap spacing, and ensure card styling is premium (subtle shadow/border, consistent padding, elegant serif headings already used). Verify the component's usage instructions before implementing."
+          "description": "Register a new route for the Frames & Memory Keepsakes page and wire it into the router so it is navigable."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Add a navigation link labeled \"Frames & Keepsakes\" pointing to the new Frames & Memory Keepsakes route. Use existing shadcn-ui Button/Link patterns without editing frontend/src/components/ui. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Add the 6 uploaded bouquet images as static assets and remap bouquet images in the correct 1–6 order for the Bouquet Collection cards.",
+      "summary": "Extend the Polaroids area to include Polaroid Bouquet products with mapped images, pricing, and descriptions.",
       "acceptanceCriteria": [
-        "The bouquet cards render images sourced from the new uploaded asset set (not older IMG_6957-1/IMG_6952-1/etc).",
-        "Image-to-product assignment matches the prompt order: (1) Ribbon, (2) Artificial, (3) Natural, (4) Pipe Cleaner, (5) Polaroid Bouquet, (6) Customized Bouquet.",
-        "No broken image links appear on /bouquets."
+        "The Polaroid Bouquet and Customized Polaroid Bouquet are visible in the UI with the exact titles, pricing text, and descriptions requested.",
+        "Each bouquet shows the correct mapped uploaded image (5th and 6th)."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/IMG_6954.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6954.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/public/assets/IMG_6959.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6959.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/public/assets/IMG_6960-5.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6960-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/public/assets/IMG_6958-5.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6958-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/public/assets/IMG_6967-5.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6967-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/public/assets/IMG_6966-5.jpeg",
-          "operation": "create",
-          "description": "Add the uploaded bouquet image IMG_6966-5.jpeg as a static frontend asset under frontend/public/assets so it can be referenced by the catalog image mapping."
-        },
-        {
-          "path": "frontend/src/lib/catalogImageMap.ts",
+          "path": "frontend/src/pages/PolaroidCollectionPage.tsx",
           "operation": "modify",
-          "description": "Update bouquet image mappings so the Bouquet Collection uses the correct assigned images in the exact 1–6 order: Ribbon->IMG_6954.jpeg, Artificial->IMG_6959.jpeg, Natural->IMG_6960-5.jpeg, Pipe Cleaner->IMG_6958-5.jpeg, Polaroid->IMG_6967-5.jpeg, Customized->IMG_6966-5.jpeg. Extend the bouquet image helper(s) as needed so BouquetCollectionPage can request these 6 bouquet image keys without broken paths."
+          "description": "Add a new section within the Polaroid Collection page to display two bouquet products: \"Polaroid Bouquet\" (Starting from ₹349; description \"Creative bouquet made using polaroid memories.\") using the mapped 5th uploaded image, and \"Customized Polaroid Bouquet\" (Starting from ₹549; description \"Fully customized polaroid bouquet tailored to theme and memory selection.\") using the mapped 6th uploaded image. Pull image paths from frontend/src/lib/catalogImageMap.ts and keep layout consistent with the existing pastel theme."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Generate premium-edited soft white/beige background versions of all 6 bouquet images and wire the Bouquet Collection to use these generated images.",
+      "summary": "Update Bookmarks page to use the 10th uploaded image and show the requested English pricing + description.",
       "acceptanceCriteria": [
-        "There are 6 generated bouquet images in frontend/public/assets/generated and the Bouquet Collection uses them (not the raw uploads).",
-        "Generated images visibly have a soft white/beige background and subtle shadow, and the bouquet is centered without altering product colors/design.",
-        "Generated images are high resolution and consistently sized for a uniform grid presentation."
+        "Bookmarks page displays the 10th uploaded image.",
+        "Pricing reads \"Starting from ₹49\" and the description text matches the request (English)."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png",
+          "path": "frontend/src/pages/BookmarkCollectionPage.tsx",
+          "operation": "modify",
+          "description": "Update the Bookmarks page to display the mapped 10th uploaded image (from frontend/src/lib/catalogImageMap.ts), change pricing copy to exactly \"Starting from ₹49\", and set the description to exactly \"Elegant, aesthetic bookmarks perfect for gifts and return favors.\" Keep all user-facing text in English."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Update Customized Cards page to use the 11th uploaded image and show the requested English pricing + description.",
+      "acceptanceCriteria": [
+        "Customized Cards page displays the 11th uploaded image.",
+        "Pricing reads \"Starting from ₹249\" and the description text matches the request (English)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CustomizedCardCollectionPage.tsx",
+          "operation": "modify",
+          "description": "Update the Customized Cards page to display the mapped 11th uploaded image (from frontend/src/lib/catalogImageMap.ts), change pricing copy to exactly \"Starting from ₹249\", and set the description to exactly \"Personalized event cards for farewell, bridal, birthday, and special occasions.\" Keep all user-facing text in English."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create \"Handcrafted Cute Essentials\" page showing edited accessory images after the 11th upload in an Instagram-style grid with boutique presentation.",
+      "acceptanceCriteria": [
+        "A \"Handcrafted Cute Essentials\" page/section exists and is reachable from site navigation.",
+        "The section displays all images after the 11th upload (IMG_6935.jpeg through IMG_6930.jpeg) in a clean grid.",
+        "Edited/processed versions of those images are used in the Cute Essentials grid (soft white background + subtle shadow + centered)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/IMG_6935_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6935.jpeg."
         },
         {
-          "path": "frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png",
+          "path": "frontend/public/assets/generated/IMG_6957_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6957.jpeg."
         },
         {
-          "path": "frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png",
+          "path": "frontend/public/assets/generated/IMG_6432_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6432.jpeg."
         },
         {
-          "path": "frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png",
+          "path": "frontend/public/assets/generated/IMG_6966_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6966.jpeg."
         },
         {
-          "path": "frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png",
+          "path": "frontend/public/assets/generated/IMG_6427_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6427.jpeg."
         },
         {
-          "path": "frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png",
+          "path": "frontend/public/assets/generated/IMG_6961_softwhite.dim_1600x1600.png",
           "operation": "create",
-          "description": "Add the generated premium-edited bouquet image with soft white/beige background and subtle shadow at frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png."
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6961.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6433_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6433.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6424_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6424.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6426_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6426.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6933_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6933.jpeg."
+        },
+        {
+          "path": "frontend/public/assets/generated/IMG_6930_softwhite.dim_1600x1600.png",
+          "operation": "create",
+          "description": "Add the edited/processed Cute Essentials image asset (soft white background + subtle shadow + centered) for IMG_6930.jpeg."
+        },
+        {
+          "path": "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx",
+          "operation": "create",
+          "description": "Create the \"Handcrafted Cute Essentials\" page that displays all images uploaded after the 11th image in an Instagram-style product grid. Use the edited assets under frontend/public/assets/generated/*_softwhite.dim_1600x1600.png (not the originals) and apply a soft-white, subtle-shadow, centered, high-resolution boutique presentation via Tailwind utility classes. Use existing shadcn-ui composition (e.g., Card) without editing files under frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register a new route for the \"Handcrafted Cute Essentials\" page and wire it into the router so it is navigable."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Add a navigation link labeled \"Cute Essentials\" pointing to the Handcrafted Cute Essentials route. Use existing shadcn-ui Button/Link patterns without editing frontend/src/components/ui. Verify the component's usage instructions before implementing."
         },
         {
           "path": "frontend/src/lib/catalogImageMap.ts",
           "operation": "modify",
-          "description": "Update the Bouquet Collection image mapping to reference the generated assets (frontend/public/assets/generated/IMG_6954_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6959_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6960-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6958-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6967-5_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6966-5_softwhite.dim_1600x1600.png) so /bouquets renders these premium-edited versions instead of raw uploads."
+          "description": "Extend the image map to include a list of Cute Essentials edited image paths (frontend/public/assets/generated/IMG_6935_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6957_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6432_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6966_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6427_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6961_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6433_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6424_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6426_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6933_softwhite.dim_1600x1600.png, frontend/public/assets/generated/IMG_6930_softwhite.dim_1600x1600.png) so the grid renders from a single source of truth."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Enhance Shop Now (Custom Orders) form with product/category/quantity/customization, image uploads, and customer details; submit to backend and show success state (no email).",
+      "acceptanceCriteria": [
+        "Order form includes fields for: product, category, quantity, customization details, image upload(s), customer name, phone number, email, and delivery date.",
+        "Submitting the form persists the full order details in the Motoko backend.",
+        "UI shows a clear success state after submission and allows submitting another order.",
+        "No email is sent as part of submission."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Update the submit-order mutation types and call signature to match the current backend interface: submitCustomOrder(name, product, category, phoneNumber, email, quantity, customizationDetails, images, deliveryDate). Use the blob-storage component's ExternalBlob class on the frontend to represent uploaded images and pass them to the backend. Verify the component's usage instructions before implementing."
         },
         {
-          "path": "frontend/src/pages/BouquetCollectionPage.tsx",
+          "path": "frontend/src/pages/CustomOrdersPage.tsx",
           "operation": "modify",
-          "description": "Ensure BouquetCollectionPage uses the updated catalog image mapping (generated softwhite assets) for all 6 cards so the displayed images are the premium-edited versions, consistently sized for a uniform luxury grid. Verify the component's usage instructions before implementing."
+          "description": "Replace the current form fields with the required English-only fields: product, category, quantity, customization details, image upload(s), name, phone number, email, delivery date; implement image upload selection and conversion to ExternalBlob instances; change the submit button label to \"Submit Order\"; keep and/or refine the success state to allow \"Submit Another Order\"; ensure no email-sending behavior is introduced. Use existing shadcn-ui components (Input, Textarea, Select, Button, Card) without editing files under frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure the existing \"Shop Now\" CTA continues to navigate users to the order form route (currently /bouquets). Update it to navigate to the Custom Orders page (/custom-orders) so \"Shop Now\" leads directly to the enhanced submission form, per requirement."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add a visible Contact section with Instagram, email, and a \"DM Us on Instagram\" button opening in a new tab.",
+      "acceptanceCriteria": [
+        "A visible Contact section exists on the site (not only in the footer).",
+        "The \"DM Us on Instagram\" button opens https://instagram.com/_the.desva_ in a new tab.",
+        "Instagram handle and email address match exactly and are clickable (mailto for email)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add a dedicated Contact section (not footer-only) that displays Instagram \"@_the.desva_\" and email \"thedesvaofficial@gmail.com\" as clickable links, plus a button labeled \"DM Us on Instagram\" that opens https://instagram.com/_the.desva_ in a new tab. Use existing shadcn-ui Button and the existing Section component composition without editing frontend/src/components/ui. Verify the component's usage instructions before implementing."
         }
       ]
     }

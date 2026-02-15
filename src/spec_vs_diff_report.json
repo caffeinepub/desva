@@ -1,49 +1,63 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T15:41:50.724Z",
-  "summary": "Bouquet Collection page code and image mapping were updated to render 6 cards and point bouquet images to generated soft-white assets. However, the diff does not show the required generated image assets being added, and at least one product description does not match the requested copy exactly. Several unrelated catalog image mappings and metadata/state files were also modified beyond the Bouquet Collection requirements.",
+  "generatedAt": "2026-02-14T14:11:35.433Z",
+  "summary": "Most requested pages/sections and the enhanced order submission flow appear implemented, including new routes/navigation for Frames & Keepsakes and Cute Essentials, updated bouquet pricing tiers/labels, new backend order fields (including image blobs), and frontend mapping for 22 images. However, the image-to-catalog mapping shows a likely violation: the 11th uploaded image for “Customized Cards” is mapped to the same file as the 6th upload (duplicate), which breaks the required 1st–11th in-order mapping.",
   "missing_requirements": [
     {
-      "id": "REQ-2",
-      "requirement": "Ensure bouquet card content matches the provided descriptions and pricing exactly (including the specific short descriptions).",
-      "reason": "The Pipe Cleaner Flower Bouquet description does not match the requested text/copy; it uses a generic placeholder description instead of the provided copy set for each bouquet card.",
+      "id": "REQ-1",
+      "requirement": "Map the first 11 uploaded images to the first 11 catalog items in the same order provided (no mismatches/duplicates).",
+      "reason": "The mapping assigns the 11th catalog item image (`customizedCardsImage`) to `/assets/IMG_6965.jpeg` and explicitly notes it is “reused from polaroid”, while the 6th upload is already mapped to the customized polaroid bouquet. This breaks the required 1st-through-11th unique ordered mapping.",
       "evidence": [
-        "frontend/src/pages/BouquetCollectionPage.tsx (Pipe Cleaner Flower Bouquet: description: 'Unique and creative designs.')"
+        "frontend/src/lib/catalogImageMap.ts (customizedCardsImage uses '/assets/IMG_6965.jpeg' with comment '11th upload (reused from polaroid)'; polaroidBouquetImages.customized also uses '/assets/IMG_6965.jpeg')"
       ]
     },
     {
-      "id": "REQ-5",
-      "requirement": "Store 6 generated premium-edited bouquet images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
-      "reason": "The code references generated images under /assets/generated, but the diff shows no new static assets added under frontend/public/assets/generated, so the requirement to store/use the generated images is not evidenced as implemented.",
+      "id": "REQ-6",
+      "requirement": "Customized Cards page must use the 11th uploaded image.",
+      "reason": "The Customized Cards page pulls `customizedCardsImage`, which is mapped to `/assets/IMG_6965.jpeg` and is duplicated with the 6th upload mapping, so it is not clearly using the distinct 11th uploaded image as required.",
       "evidence": [
-        "frontend/src/lib/catalogImageMap.ts (references '/assets/generated/IMG_6954_softwhite.dim_1600x1600.png' etc.)",
-        "File diff summary: 'ADDED FILES: none'"
+        "frontend/src/pages/CustomizedCardCollectionPage.tsx (uses customizedCardsImage)",
+        "frontend/src/lib/catalogImageMap.ts (customizedCardsImage points to '/assets/IMG_6965.jpeg', duplicated with 6th upload mapping)"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Updated/added mappings for Polaroid Bouquet images, Frames & Memory Keepsakes images, Bookmarks image, Customized Cards image, and a Cute Essentials generated image array.",
-      "reason": "The request was specifically about Bouquet Collection and only allowed changes to other collection pages/mappings if needed to support Bouquet Collection images; these additional mappings appear unrelated to supporting Bouquet Collection images.",
+      "description": "Admin-token URL/session parameter handling and secret-based access-control initialization (`caffeineAdminToken`).",
+      "reason": "The BuildRequest does not ask for admin-token ingestion via URL/session or secret-parameter plumbing; it only asks to enhance order submission and keep retrieval sorted/working, and explicitly notes constraints about not modifying certain hooks (not addressed here).",
       "evidence": [
-        "frontend/src/lib/catalogImageMap.ts (polaroidBouquetImages, framesMemoryImages, bookmarksImage, customizedCardsImage, cuteEssentialsImages)"
+        "frontend/src/utils/urlParams.ts (URL/session parameter utilities)",
+        "frontend/src/hooks/useActor.ts (reads admin token via getSecretParameter('caffeineAdminToken') and calls _initializeAccessControlWithSecret)"
       ]
     },
     {
-      "description": "Modified project tracking/metadata files (frontend-file-summaries.txt and project_state.json).",
-      "reason": "Not requested as part of the build requirements; these are auxiliary state/summary updates not mentioned in the BuildRequest.",
+      "description": "Added/extended backend authorization/access-control system integration around orders (admin-only getAllCustomOrders) beyond the requested storage model changes.",
+      "reason": "REQ-9 focuses on updating the CustomOrder model and preserving retrieval functionality; it does not request adding or changing authorization requirements for order retrieval.",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "project_state.json"
+        "backend/main.mo (getAllCustomOrders checks AccessControl.isAdmin and traps if unauthorized; includes MixinAuthorization/access control initialization)"
       ]
     }
   ],
   "confidence": 0.72,
   "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
     "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/layout/TopNav.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useQueries.ts",
     "frontend/src/lib/catalogImageMap.ts",
+    "frontend/src/pages/BookmarkCollectionPage.tsx",
     "frontend/src/pages/BouquetCollectionPage.tsx",
+    "frontend/src/pages/CustomOrdersPage.tsx",
+    "frontend/src/pages/CustomizedCardCollectionPage.tsx",
+    "frontend/src/pages/FramesMemoryKeepsakesPage.tsx",
+    "frontend/src/pages/HandcraftedCuteEssentialsPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PolaroidCollectionPage.tsx",
+    "frontend/src/utils/urlParams.ts",
     "project_state.json"
   ]
 }

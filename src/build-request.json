@@ -1,119 +1,222 @@
 {
   "kind": "build_request",
-  "title": "Bouquet Collection: 6-card luxury grid with updated pricing, descriptions, and premium soft-white images",
+  "title": "Add DESVA product catalog with uploaded images, cute accessories grid, and enhanced Shop Now order form (email skipped)",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update the Bouquet Collection page to present a single main section titled “Bouquet Collection” containing exactly 6 product cards in a clean, premium grid layout (6 items total), each showing: product image, product name, short description, and pricing details, matching the user-provided bouquet types and copy.",
+      "text": "Add the uploaded product images as frontend static assets and map them to the correct catalog items in the same order provided (1st through 11th image for the first 11 catalog items; all images after the 11th for the Cute Accessories section).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "Create a separate main section titled “Bouquet Collection”.\n\nInside this Bouquet section, create 6 clear product divisions (6 columns or 6 product cards).\n\nEach division must display:\n\t•\tProduct Image (use assigned uploaded image)\n\t•\tProduct Name\n\t•\tShort Description\n\t•\tPricing Details\n\t•\tClean premium layout"
+          "Use first uploaded image.",
+          "Use eleventh uploaded image.",
+          "Use uploaded scrunchies and cute accessory images take the all image after the eleventh image uploaded"
         ]
       },
       "acceptanceCriteria": [
-        "/bouquets renders one Bouquet Collection section containing 6 product cards for: Ribbon Flower Bouquet, Artificial Flower Bouquet, Natural Flower Bouquet, Pipe Cleaner Flower Bouquet, Polaroid Bouquet, Customized Bouquet.",
-        "Each card displays: image, name, short description, and pricing details (tiers or starting price as specified).",
-        "Text and pricing match the user prompt exactly (including the Pipe Cleaner note text)."
+        "All 22 uploaded images are available as static assets under the frontend public assets path and load correctly in the browser.",
+        "Each of the first 11 catalog items renders with its specified mapped image.",
+        "All images after the 11th are displayed in the Cute Accessories section/grid."
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Ensure bouquet card content matches the provided descriptions and pricing exactly:\n- Ribbon Flower Bouquet: Description “Handmade ribbon flower bouquet with elegant wrapping.” Pricing tiers: Normal ₹89, Premium ₹119\n- Artificial Flower Bouquet: Description “Long-lasting artificial flower bouquet with premium finish.” Pricing tiers: Normal ₹89, Premium ₹119\n- Natural Flower Bouquet: Description “Fresh natural flower bouquet arranged beautifully.” Pricing tiers: Normal ₹89, Premium ₹119\n- Pipe Cleaner Flower Bouquet: Pricing tiers: Normal ₹200, Premium ₹250, Customized Premium ₹300+ and include note: “Final price depends on customization.”\n- Polaroid Bouquet: Description “Creative bouquet designed using polaroid photo memories.” Pricing: Starting from ₹350\n- Customized Bouquet: Description “Fully customized bouquet designed according to theme and customer preferences.” Pricing: Starting from ₹550",
+      "text": "Update the Bouquet Collection page to match the requested pricing labels and values: Ribbon Flower Bouquet (Normal ₹89, Premium ₹119), Artificial Flower Bouquet (Normal ₹89, Premium ₹119), Natural Flower Bouquet (Normal ₹89, Premium ₹119), and Pipe Cleaner Flower Bouquet (Normal ₹199, Premium ₹249, Customized Premium ₹299+), and display the note: \"Final pricing depends on customization.\"",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "🌸 1️⃣ Ribbon Flower Bouquet\n\nPricing:\n\t•\tNormal – ₹89\n\t•\tPremium – ₹119\n\nDescription:\nHandmade ribbon flower bouquet with elegant wrapping.\n\n⸻\n\n🌸 2️⃣ Artificial Flower Bouquet\n...\n🌸 6️⃣ Customized Bouquet\n...\nPricing:\n\t•\tStarting from ₹550\n\nDescription:\nFully customized bouquet designed according to theme and customer preferences."
+          "1️⃣ Ribbon Flower Bouquet\n\nPricing:\n\t•\tNormal – ₹89\n\t•\tPremium – ₹119",
+          "4️⃣ Pipe Cleaner Flower Bouquet\n\nPricing:\n\t•\tNormal – ₹199\n\t•\tPremium – ₹249\n\t•\tCustomized Premium – ₹299+\n\nAdd note:\n“Final pricing depends on customization.”"
         ]
       },
       "acceptanceCriteria": [
-        "Prices displayed on the Bouquet Collection page match the prompt exactly (including ₹200/₹250/₹300+ for Pipe Cleaner, and Starting from ₹350/₹550 for Polaroid/Customized).",
-        "The Pipe Cleaner card includes the note text exactly: “Final price depends on customization.”",
-        "Each bouquet card includes its specific short description (not generic placeholder text like “Choose your preferred tier”)."
+        "Bouquet tier labels show \"Normal\" and \"Premium\" (not \"Basic\").",
+        "Pipe Cleaner bouquet prices show ₹199 / ₹249 / ₹299+ and the exact note text appears on the page.",
+        "Bouquet Collection page includes the correct mapped images for each bouquet type."
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Implement the Bouquet Collection grid as a responsive, equal-spacing layout with a luxury boutique feel on a soft white / beige aesthetic background. The grid must be mobile responsive and use elegant typography consistent with a premium catalog.",
+      "text": "Add a new section/page titled \"Frames & Memory Keepsakes\" that includes: Polaroid Prints pricing (Square ₹9, Rectangle ₹9, Large ₹11) with the 7th uploaded image; Polaroid Book pricing (8 Photos ₹99, 16 Photos ₹199) with the 8th uploaded image and description \"Compact memory book printed in premium quality.\"; Magazine Style Memory Album pricing (4 Pages ₹499, 8 Pages ₹599) with the 9th uploaded image and description \"Customized magazine-style photo album with elegant layout.\"; and include the mapped product images in an Instagram-style grid layout.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "Use a soft white aesthetic background and maintain a luxury boutique style.\n...\nLayout must be:\n\t•\tClean grid format\n\t•\tEqual spacing\n\t•\tElegant typography\n\t•\tMobile responsive\n\t•\tLuxury handmade boutique feel"
+          "🖼 FRAMES & MEMORY COLLECTION\n\nTitle: “Frames & Memory Keepsakes”",
+          "📸 Polaroid Prints\n\n\t•\tSquare – ₹9\n\t•\tRectangle – ₹9\n\t•\tLarge – ₹11",
+          "📖 Polaroid Book\n\n\t•\t8 Photos – ₹99\n\t•\t16 Photos – ₹199\n\nDescription:\nCompact memory book printed in premium quality.",
+          "📰 Magazine Style Memory Album\n\n\t•\t4 Pages – ₹499\n\t•\t8 Pages – ₹599\n\nDescription:\nCustomized magazine-style photo album with elegant layout."
         ]
       },
       "acceptanceCriteria": [
-        "Bouquet Collection section background is soft white/beige (not a colorful gradient).",
-        "Grid is responsive (1 column on small screens; increases with breakpoints) and maintains equal spacing between cards.",
-        "Card styling reads as premium (clean borders/shadows, consistent spacing/typography)."
+        "A \"Frames & Memory Keepsakes\" page/section exists and is reachable from site navigation.",
+        "All listed items show the exact pricing and descriptions requested.",
+        "Each item displays the correct mapped uploaded image (7th/8th/9th).",
+        "Layout is a clean, minimal, Instagram-style product grid consistent with the existing pastel theme."
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Add the 6 uploaded bouquet images as static frontend assets and update frontend image mappings so the Bouquet Collection cards use the assigned images in order (1st–6th) with the provided filenames: IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg.",
+      "text": "Update/extend the Polaroids area to include two bouquet products with their mapped images and descriptions: \"Polaroid Bouquet\" (Starting from ₹349; description \"Creative bouquet made using polaroid memories.\") using the 5th uploaded image, and \"Customized Polaroid Bouquet\" (Starting from ₹549; description \"Fully customized polaroid bouquet tailored to theme and memory selection.\") using the 6th uploaded image.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "The user has uploaded 6 image(s): IMG_6954.jpeg, IMG_6959.jpeg, IMG_6960-5.jpeg, IMG_6958-5.jpeg, IMG_6967-5.jpeg, IMG_6966-5.jpeg."
+          "5️⃣ Polaroid Bouquet\n\nPricing:\n\t•\tStarting from ₹349\n\nDescription:\nCreative bouquet made using polaroid memories.",
+          "6️⃣ Customized Polaroid Bouquet\n\nPricing:\n\t•\tStarting from ₹549\n\nDescription:\nFully customized polaroid bouquet tailored to theme and memory selection."
         ]
       },
       "acceptanceCriteria": [
-        "The bouquet cards render images sourced from the new uploaded asset set (not older IMG_6957-1/IMG_6952-1/etc).",
-        "Image-to-product assignment matches the prompt order: (1) Ribbon, (2) Artificial, (3) Natural, (4) Pipe Cleaner, (5) Polaroid Bouquet, (6) Customized Bouquet.",
-        "No broken image links appear on /bouquets."
+        "The Polaroid Bouquet and Customized Polaroid Bouquet are visible in the UI with the exact titles, pricing text, and descriptions requested.",
+        "Each bouquet shows the correct mapped uploaded image (5th and 6th)."
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Generate and use premium-edited versions of all 6 bouquet images that preserve original product colors/design while replacing the background with soft white or beige, adding a subtle shadow, maintaining high resolution, and centering the product. Store generated images in frontend/public/assets/generated and ensure the Bouquet Collection uses these generated images.",
+      "text": "Update the Bookmarks page to ensure it uses the 10th uploaded image and shows \"Starting from ₹49\" plus the provided description text in English.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "For all bouquet images:\n\t•\tKeep original product colors\n\t•\tDo not alter product design\n\t•\tReplace background with soft white or beige aesthetic\n\t•\tAdd subtle shadow\n\t•\tMaintain high resolution\n\t•\tUse clean centered alignment\n\t•\tMake product look premium and professional"
+          "🔖 BOOKMARKS\n\nUse tenth uploaded image.\n\nStarting from ₹49\n\nElegant, aesthetic bookmarks perfect for gifts and return favors."
         ]
       },
       "acceptanceCriteria": [
-        "There are 6 generated bouquet images in frontend/public/assets/generated and the Bouquet Collection uses them (not the raw uploads).",
-        "Generated images visibly have a soft white/beige background and subtle shadow, and the bouquet is centered without altering product colors/design.",
-        "Generated images are high resolution and consistently sized for a uniform grid presentation."
+        "Bookmarks page displays the 10th uploaded image.",
+        "Pricing reads \"Starting from ₹49\" and the description text matches the request (English)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Update the Customized Cards page to ensure it uses the 11th uploaded image and shows \"Starting from ₹249\" plus the provided description text in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "💌 CUSTOMIZED CARDS\n\nUse eleventh uploaded image.\n\nStarting from ₹249\n\nPersonalized event cards for farewell, bridal, birthday, and special occasions."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Customized Cards page displays the 11th uploaded image.",
+        "Pricing reads \"Starting from ₹249\" and the description text matches the request (English)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a \"Handcrafted Cute Essentials\" section/page that displays all images uploaded after the 11th image in an Instagram-style product grid, and apply the provided image presentation rules (soft white aesthetic background, subtle shadow, centered, high-resolution, keep original product color/quality, luxury boutique product photography style).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🧸 CUTE ACCESSORIES SECTION\n\nTitle: “Handcrafted Cute Essentials”",
+          "Image Instructions:\n\t•\tKeep original product color and quality\n\t•\tReplace background with soft white aesthetic\n\t•\tAdd subtle shadow\n\t•\tHigh resolution\n\t•\tCenter aligned\n\t•\tLuxury boutique product photography style"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A \"Handcrafted Cute Essentials\" page/section exists and is reachable from site navigation.",
+        "The section displays all images after the 11th upload (IMG_6935.jpeg through IMG_6930.jpeg) in a clean grid.",
+        "Edited/processed versions of those images are used in the Cute Essentials grid (soft white background + subtle shadow + centered)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Enhance the \"Shop Now\" order submission system (currently Custom Orders) so customers can: select product, choose category, select quantity, add customization details, upload images (if required), enter name, phone number, email, and enter delivery date; and submit via a \"Submit Order\" button. Keep all user-facing text in English.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🛒 SHOP NOW & ORDER SUBMISSION SYSTEM\n\nWhen customer clicks “Shop Now”...\n\t•\tSelect product\n\t•\tChoose category\n\t•\tSelect quantity\n\t•\tAdd customization details\n\t•\tUpload images (if required)\n\t•\tEnter name, phone number, email\n\t•\tEnter delivery date\n\nAdd “Submit Order” button."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Order form includes fields for: product, category, quantity, customization details, image upload(s), customer name, phone number, email, and delivery date.",
+        "Submitting the form persists the full order details in the Motoko backend.",
+        "UI shows a clear success state after submission and allows submitting another order.",
+        "No email is sent as part of submission."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Update the backend CustomOrder data model and submission API to store the new order fields (product, category, phone number, email, customization details, and uploaded image references/data as applicable), while preserving existing order retrieval functionality (sorted by timestamp).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "They should be able to: ... Upload images (if required) ... Enter name, phone number, email ... Enter delivery date"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes an updated submit method that accepts the new fields and stores them with a timestamp.",
+        "Existing getAllCustomOrders continues to return orders sorted by timestamp (newest first).",
+        "Backend can store and return uploaded image data or stable references in a way the frontend can display/download later."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add a Contact section on the site that displays Instagram \"@_the.desva_\" and email \"thedesvaofficial@gmail.com\", and includes a button labeled \"DM Us on Instagram\" that links to https://instagram.com/_the.desva_ in a new tab.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "📱 CONTACT SECTION\n\nInstagram: @_the.desva_\nEmail: thedesvaofficial@gmail.com\n\nAdd button:\n“DM Us on Instagram”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible Contact section exists on the site (not only in the footer).",
+        "The \"DM Us on Instagram\" button opens https://instagram.com/_the.desva_ in a new tab.",
+        "Instagram handle and email address match exactly and are clickable (mailto for email)."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui (compose only).",
-    "Keep original product colors and do not alter product design in bouquet images; only adjust background and add subtle shadow.",
-    "Store generated images as static assets under frontend/public/assets/generated; do not route image generation/serving through the backend."
+    "Do not edit files under frontend/src/components/ui (compose existing UI components instead).",
+    "Do not modify immutable frontend hook files listed in SYSTEM_CONTEXT.",
+    "Email notification functionality must not be implemented (email is explicitly skipped/disabled).",
+    "Keep all user-facing text in English."
   ],
   "nonGoals": [
-    "Do not add checkout, payments, cart, or ordering flows beyond existing site behavior.",
-    "Do not change backend canister logic (Motoko) for this request.",
-    "Do not redesign other collection pages (Polaroid/Bookmarks/etc) except for shared image mapping changes needed to support the Bouquet Collection images."
+    "Implementing any email notification system for orders.",
+    "Third-party authentication beyond Internet Identity.",
+    "Adding external databases or non-Motoko backend services."
   ],
   "imageRequirements": {
-    "required": [
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6954_softwhite.dim_1600x1600.png)",
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6959_softwhite.dim_1600x1600.png)",
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6960-5_softwhite.dim_1600x1600.png)",
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6958-5_softwhite.dim_1600x1600.png)",
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6967-5_softwhite.dim_1600x1600.png)",
-      "Premium centered bouquet product photo with soft white/beige background and subtle shadow (IMG_6966-5_softwhite.dim_1600x1600.png)"
-    ],
-    "edits": []
+    "required": [],
+    "edits": [
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6935.jpeg > IMG_6935_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6957.jpeg > IMG_6957_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6432.jpeg > IMG_6432_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6966.jpeg > IMG_6966_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6427.jpeg > IMG_6427_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6961.jpeg > IMG_6961_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6433.jpeg > IMG_6433_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6424.jpeg > IMG_6424_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6426.jpeg > IMG_6426_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6933.jpeg > IMG_6933_softwhite.dim_1600x1600.png)",
+      "Replace background with soft white aesthetic, keep original product colors/quality, add subtle shadow, center aligned, high resolution (IMG_6930.jpeg > IMG_6930_softwhite.dim_1600x1600.png)"
+    ]
   },
   "userProfileUpdate": {
     "goalsToAdd": [],
