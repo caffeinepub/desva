@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft pastel pink premium palette */
+    --background: oklch(0.99 0.005 15);
+    --foreground: oklch(0.25 0.02 15);
+
+    --card: oklch(1.0 0.0 0);
+    --card-foreground: oklch(0.25 0.02 15);
+
+    --popover: oklch(1.0 0.0 0);
+    --popover-foreground: oklch(0.25 0.02 15);
+
+    /* Rose gold primary */
+    --primary: oklch(0.62 0.12 25);
+    --primary-foreground: oklch(1.0 0.0 0);
+
+    --secondary: oklch(0.94 0.03 15);
+    --secondary-foreground: oklch(0.45 0.06 20);
+
+    --muted: oklch(0.96 0.02 15);
+    --muted-foreground: oklch(0.55 0.04 20);
+
+    --accent: oklch(0.92 0.04 15);
+    --accent-foreground: oklch(0.45 0.06 20);
+
+    --destructive: oklch(0.55 0.2 25);
+    --destructive-foreground: oklch(1.0 0.0 0);
+
+    --border: oklch(0.90 0.04 15);
+    --input: oklch(0.90 0.04 15);
+    --ring: oklch(0.62 0.12 25);
+
+    --radius: 1rem;
+
+    /* Custom DESVA tokens */
+    --rosegold: oklch(0.62 0.12 25);
+    --rosegold-dark: oklch(0.54 0.12 25);
+    --blush: oklch(0.93 0.04 15);
+    --cream: oklch(0.98 0.01 60);
+    --dusty-rose: oklch(0.55 0.08 20);
+  }
+
+  .dark {
+    --background: oklch(0.15 0.02 15);
+    --foreground: oklch(0.95 0.01 15);
+    --card: oklch(0.18 0.02 15);
+    --card-foreground: oklch(0.95 0.01 15);
+    --popover: oklch(0.18 0.02 15);
+    --popover-foreground: oklch(0.95 0.01 15);
+    --primary: oklch(0.72 0.12 25);
+    --primary-foreground: oklch(0.15 0.02 15);
+    --secondary: oklch(0.22 0.03 15);
+    --secondary-foreground: oklch(0.85 0.03 15);
+    --muted: oklch(0.22 0.02 15);
+    --muted-foreground: oklch(0.65 0.04 20);
+    --accent: oklch(0.25 0.04 15);
+    --accent-foreground: oklch(0.85 0.03 15);
+    --destructive: oklch(0.55 0.2 25);
+    --destructive-foreground: oklch(1.0 0.0 0);
+    --border: oklch(0.28 0.03 15);
+    --input: oklch(0.28 0.03 15);
+    --ring: oklch(0.72 0.12 25);
+    --rosegold: oklch(0.72 0.12 25);
+    --rosegold-dark: oklch(0.62 0.12 25);
+    --blush: oklch(0.25 0.04 15);
+    --cream: oklch(0.18 0.01 60);
+    --dusty-rose: oklch(0.75 0.06 20);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-serif-elegant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-rosegold {
+    color: var(--rosegold);
+  }
+
+  .text-dusty-rose {
+    color: var(--dusty-rose);
+  }
+
+  .bg-rosegold {
+    background-color: var(--rosegold);
+  }
+
+  .bg-rosegold-dark {
+    background-color: var(--rosegold-dark);
+  }
+
+  .bg-blush {
+    background-color: var(--blush);
+  }
+
+  .bg-cream {
+    background-color: var(--cream);
+  }
+
+  .border-blush {
+    border-color: var(--blush);
+  }
+
+  .border-rosegold {
+    border-color: var(--rosegold);
+  }
+
+  .fill-rosegold {
+    fill: var(--rosegold);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 2px 16px 0 oklch(0.62 0.12 25 / 0.10), 0 1px 4px 0 oklch(0.62 0.12 25 / 0.06);
+  }
+
+  .shadow-luxury {
+    box-shadow: 0 8px 32px 0 oklch(0.62 0.12 25 / 0.18), 0 2px 8px 0 oklch(0.62 0.12 25 / 0.10);
+  }
+}
+
+@layer components {
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out both;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out both;
+  }
+
+  .animate-zoom-in {
+    animation: zoom-in 0.4s ease-out both;
+  }
+}

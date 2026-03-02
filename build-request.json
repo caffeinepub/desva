@@ -1,0 +1,38 @@
+{
+  "kind": "build_request",
+  "title": "Remove images from Cute Accessories section",
+  "projectName": "DESVA",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Remove all product images (AI-generated earring images and any thumbnail switcher gallery) from the Cute Accessories page (CuteAccessoriesPage.tsx). Product cards should display without any image, showing only text-based content such as product name, description, and pricing.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Remove image fore cute accessories"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Cute Accessories page renders with no images in any product card.",
+        "The earring gallery thumbnail switcher component is removed.",
+        "No broken image elements or empty image containers remain visible.",
+        "All other product information (name, price, tags, add-to-cart) remains intact.",
+        "Layout of product cards adjusts cleanly without the image space."
+      ]
+    }
+  ],
+  "constraints": [],
+  "nonGoals": [
+    "Removing images from any other page or section (bouquets, polaroids, magazines, etc.)",
+    "Deleting the generated image files from the static assets folder",
+    "Modifying backend product data"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
